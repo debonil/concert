@@ -4,14 +4,19 @@
 
 @import './custom-theme';
 
-//  --------- customise bootstrap begins ---------
-@import "node_modules/bootstrap/scss/bootstrap";
-$theme-colors: (
-  "primary": #ff4136,
-  "danger": #ff4136
-);
+@import 'node_modules/bootstrap/scss/functions';
+@import './assets/styles/variables';
+@import 'node_modules/bootstrap/scss/bootstrap';
 
-//  --------- customise bootstrap ends ---------
+// //  --------- customise bootstrap begins ---------
+// // @import "node_modules/bootstrap/scss/bootstrap";
+// $theme-colors: (
+//   "primary": #ff4136,
+//   "danger": #007bff
+// );
+// @import "node_modules/bootstrap/scss/bootstrap";
+
+// //  --------- customise bootstrap ends ---------
 
 /* ------ vertical align CSS begins ------- */
 .vertical-align-bottom {
