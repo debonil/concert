@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* -------loader CSS begins------- */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* -------loader CSS ends------- */
+
+/* ------ vertical align CSS begins ------- */
+.vertical-align-bottom {
+  vertical-align: bottom;
+}
+
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+/* ------ vertical align CSS ends ------- */
+
+/* ------- onFocus Outline CSS begins -----------  */
+div:focus {
+  outline:none !important;
+  border-color: #007bff !important;
+  box-shadow:0 0 2px #007bff !important;
+}
+/* ------- onFocus Outline CSS ends -----------  */
+
+/* ------------- font size CSS begins ---------------- */
+html {
+  font-size: 0.99rem;
+}
+
+.text-xxxl {
+  font-size: 1.8rem;
+}
+.text-xxl {
+  font-size: 1.6rem;
+}
+
+.text-xl {
+  font-size: 1.4rem;
+}
+
+.text-lg {
+  font-size: 1.2rem;
+}
+
+.text-md {
+  font-size: 1rem;
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}
+
+.text-xs {
+  font-size: 0.6rem;
+}
+
+.text-xxs {
+  font-size: 0.4rem;
+}
+
+.text-xxxs {
+  font-size: 0.2rem;
+}
+/* ------------- font size CSS ends ---------------- */
+
+/* -------------- colors set CSS begins ---------------- */
+.my-mat-bg-color-primary {
+  background-color: #3f51b5;
+}
+.my-mat-bg-color-accent {
+  background-color: #ff4081;
+}
+.my-mat-color-primary {
+  color: #3f51b5;
+}
+.my-mat-color-accent {
+  color: #ff4081;
+}
+/* -------------- colors set CSS ends ---------------- */
+
+/* ----------------pointer CSS begins--------------------- */
+.cursor-pointer {
+  cursor: pointer;
+}
+/* ----------------pointer CSS ends--------------------- */

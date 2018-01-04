@@ -1,3 +1,12 @@
-<p>
-  enquiries-menu works!
-</p>
+<div class="container">
+  <div class="text-center text-xxl my-2 my-mat-color-accent">
+    <span>Enquiries</span>
+  </div>
+  <div class="row">
+    <div class="col-xl-4 col-lg-6 col-12 my-1 mx-0" *ngFor="let enq of enquiriesList; let i = index;">
+      <div [routerLink]="['/enquiries/' + enq.path]" tabindex="0" class="card py-2 px-1 bg-light text-secondary text-sm cursor-pointer">
+        <span class="my-mat-color-primary"><span class="my-mat-color-accent px-1">{{i + 1}}.</span> {{enq.name}}</span>
+      </div>
+    </div>
+  </div>
+</div>
