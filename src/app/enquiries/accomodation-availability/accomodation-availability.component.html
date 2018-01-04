@@ -72,8 +72,8 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker startView="month" [startAt]="todayDate"></mat-datepicker>
         </mat-form-field>
-        <button *ngIf="!accomodationAvailabilityFetched" mat-raised-button class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" type="submit">Fetch Availability</button>
-        <button *ngIf="accomodationAvailabilityFetched" mat-raised-button class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" (click)="accomodationAvailabilityFetched=false">Reset</button>
+        <button *ngIf="!accomodationAvailabilityFetched" mat-raised-button color="primary" class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" type="submit">Fetch Availability</button>
+        <button *ngIf="accomodationAvailabilityFetched" mat-raised-button color="accent" class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" (click)="accomodationAvailabilityFetched=false">Reset</button>
       </div>
     </form>
   </div>

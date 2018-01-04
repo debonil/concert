@@ -1,28 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-
-/* -------loader CSS begins------- */
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
-
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-/* -------loader CSS ends------- */
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import './custom-theme';
 
 /* ------ vertical align CSS begins ------- */
 .vertical-align-bottom {
