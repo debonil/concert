@@ -1,9 +1,6 @@
 <div class="container">
-  <!-- <div class="text-center text-xxl my-2 my-mat-color-accent">
-    <span>Accomodation Availability</span>
-  </div> -->
   <div class="card my-2 mat-elevation-z1">
-    <div class="card-header py-2 my-mat-color-accent bg-white font-weight-bold">
+    <div class="card-header py-2 text-primary bg-light">
         <span class="col-lg-9 col-md-6 col-12">
             Accomodation Availability
         </span>
@@ -72,25 +69,25 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker startView="month" [startAt]="todayDate"></mat-datepicker>
         </mat-form-field>
-        <button *ngIf="!accomodationAvailabilityFetched" mat-raised-button color="primary" class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" type="submit">Fetch Availability</button>
-        <button *ngIf="accomodationAvailabilityFetched" mat-raised-button color="accent" class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" (click)="accomodationAvailabilityFetched=false">Reset</button>
+        <button *ngIf="!accomodationAvailabilityFetched" mat-raised-button class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-primary" type="submit">Fetch Availability</button>
+        <button *ngIf="accomodationAvailabilityFetched" mat-raised-button class="col-md-3 col-sm-6 col-12 mx-0 my-2 text-secondary" (click)="accomodationAvailabilityFetched=false">Reset</button>
       </div>
     </form>
   </div>
 
-  <div *ngIf="accomodationAvailabilityFetched" class="m-3 p-2 bg-light rounded">
-    <table class="table table-responsive-sm table-hover">
-      <thead class="my-mat-color-accent bg-white">
+  <div *ngIf="accomodationAvailabilityFetched" class="my-3 pb-2">
+    <table class="table table-responsive">
+      <thead class="text-primary bg-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col">Date</th>
-          <th scope="col">Class: AC 2 Tier</th>
-          <th scope="col">Class: Sleeper</th>
+          <td scope="col">Date</td>
+          <td scope="col">Class: AC 2 Tier (1A)</td>
+          <td scope="col">Class: Sleeper (SL)</td>
         </tr>
       </thead>
-      <tbody class="my-mat-color-primary bg-light">
+      <tbody class="text-dark">
         <tr *ngFor="let avl of fetchedAccomodationAvailability; let i = index;">
-          <th scope="row" class="my-mat-color-accent">{{i + 1}}</th>
+          <th scope="row" class="text-secondary">{{i + 1}}</th>
           <td>{{todayDate| date: 'dd-MM-yyyy'}}</td>
           <td>{{avl.avl_2A}}</td>
           <td>{{avl.avl_SL}}</td>
