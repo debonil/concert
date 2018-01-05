@@ -64,6 +64,34 @@
           <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
           <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
         </mat-form-field>
+        <mat-form-field class="col-md-3 col-sm-6 col-12">
+          <mat-select placeholder="No. of Adult Passengers" required>
+            <!-- <mat-option value="">Select Class</mat-option> -->
+            <mat-option value="0">None</mat-option>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+          <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field class="col-md-3 col-sm-6 col-12">
+          <mat-select placeholder="No. of Child Passengers" required>
+            <!-- <mat-option value="">Select Class</mat-option> -->
+            <mat-option value="0">None</mat-option>
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+          <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+        </mat-form-field>
         <mat-form-field class="col-md-3 col-sm-6 col-12 mx-0">
           <input matInput [matDatepicker]="picker" placeholder="Journey date" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -78,73 +106,156 @@
   </div>
 
   <div *ngIf="accomodationAvailabilityFetched">
-    <div class="row">
-      <div class="col-md-6 col-12 px-3 my-3">
-        <div class="card">
-          <div class="card-header py-2 text-primary bg-light">
-            Single Adult Fare
+  <!-- <div *ngIf="true"> -->
+    <div class="card my-3">
+      <div class="card-header py-1">
+        Class: AC 2 Tier (2A)
+      </div>
+      <div class="card-body row p-1 text-sm">
+        <div class="col-lg-6 col-12 px-3 pl-lg-3 pr-lg-1 my-1">
+          <div class="card">
+            <div class="card-header py-1">
+              Single Adult Fare
+            </div>
+            <div class="card-body px-2 py-1">
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Base Fare & Catering Charges </div>
+                <div class="col-4">: {{967 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Reservation Charge </div>
+                <div class="col-4">: {{40 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Superfast Charge </div>
+                <div class="col-4">: {{45 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">GST </div>
+                <div class="col-4">: {{53 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Others </div>
+                <div class="col-4">: {{0 | currency: 'INR'}}</div>
+              </div>
+            </div>
+            <div class="card-footer py-1 px-4">
+              <div class="row">
+                <div class="col-8">Total </div>
+                <div class="col-4">: {{1105 | currency: 'INR'}}</div>
+              </div>
+            </div>
           </div>
-          <div class="card-body px-4 py-2">
-            <div class="row">
-              <div class="col-8">Base Fare and Catering Charges: </div>
-              <div class="col-4">{{967 | currency: 'INR'}}</div>
+        </div>
+        <div class="col-lg-6 col-12 px-3 pl-lg-1 pr-lg-3 my-1">
+          <div class="card">
+            <div class="card-header py-1">
+              Transaction Fare
             </div>
-            <div class="row">
-              <div class="col-8">Reservation Charge: </div>
-              <div class="col-4">{{40 | currency: 'INR'}}</div>
+            <div class="card-body px-2 py-1">
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Base Fare & Catering Charges </div>
+                <div class="col-4">: {{2418 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Reservation Charge </div>
+                <div class="col-4">: {{80 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Superfast Charge </div>
+                <div class="col-4">: {{135 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">GST </div>
+                <div class="col-4">: {{133 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Others </div>
+                <div class="col-4">: {{0 | currency: 'INR'}}</div>
+              </div>
             </div>
-            <div class="row">
-              <div class="col-8">Superfast Charge: </div>
-              <div class="col-4">{{45 | currency: 'INR'}}</div>
-            </div>
-            <div class="row">
-              <div class="col-8">GST: </div>
-              <div class="col-4">{{53 | currency: 'INR'}}</div>
-            </div>
-            <div class="row">
-              <div class="col-8">Others: </div>
-              <div class="col-4">{{0 | currency: 'INR'}}</div>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-8">Total: </div>
-              <div class="col-4">{{1105 | currency: 'INR'}}</div>
+            <div class="card-footer py-1 px-4">
+              <div class="row">
+                <div class="col-8">Total </div>
+                <div class="col-4">: {{2770 | currency: 'INR'}}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-12 px-3 my-3">
-        <div class="card">
-          <div class="card-header py-2 text-primary bg-light">
-            Transaction Fare
+    </div>
+    <div class="card my-3">
+      <div class="card-header py-1">
+        Class: Sleeper (SL)
+      </div>
+      <div class="card-body row p-1 text-sm">
+        <div class="col-lg-6 col-12 px-3 pl-lg-3 pr-lg-1 my-1">
+          <div class="card">
+            <div class="card-header py-1">
+              Single Adult Fare
+            </div>
+            <div class="card-body px-2 py-1">
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Base Fare & Catering Charges </div>
+                <div class="col-4">: {{967 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Reservation Charge </div>
+                <div class="col-4">: {{40 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Superfast Charge </div>
+                <div class="col-4">: {{45 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">GST </div>
+                <div class="col-4">: {{53 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Others </div>
+                <div class="col-4">: {{0 | currency: 'INR'}}</div>
+              </div>
+            </div>
+            <div class="card-footer py-1 px-4">
+              <div class="row">
+                <div class="col-8">Total </div>
+                <div class="col-4">: {{1105 | currency: 'INR'}}</div>
+              </div>
+            </div>
           </div>
-          <div class="card-body px-4 py-2">
-            <div class="row">
-              <div class="col-8">Base Fare and Catering Charges: </div>
-              <div class="col-4">{{2418 | currency: 'INR'}}</div>
+        </div>
+        <div class="col-lg-6 col-12 px-3 pl-lg-1 pr-lg-3 my-1">
+          <div class="card">
+            <div class="card-header py-1">
+              Transaction Fare
             </div>
-            <div class="row">
-              <div class="col-8">Reservation Charge: </div>
-              <div class="col-4">{{80 | currency: 'INR'}}</div>
+            <div class="card-body px-2 py-1">
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Base Fare & Catering Charges </div>
+                <div class="col-4">: {{2418 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Reservation Charge </div>
+                <div class="col-4">: {{80 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Superfast Charge </div>
+                <div class="col-4">: {{135 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">GST </div>
+                <div class="col-4">: {{133 | currency: 'INR'}}</div>
+              </div>
+              <div class="row bg-light my-1 py-1 mx-0">
+                <div class="col-8">Others </div>
+                <div class="col-4">: {{0 | currency: 'INR'}}</div>
+              </div>
             </div>
-            <div class="row">
-              <div class="col-8">Superfast Charge: </div>
-              <div class="col-4">{{135 | currency: 'INR'}}</div>
-            </div>
-            <div class="row">
-              <div class="col-8">GST: </div>
-              <div class="col-4">{{133 | currency: 'INR'}}</div>
-            </div>
-            <div class="row">
-              <div class="col-8">Others: </div>
-              <div class="col-4">{{0 | currency: 'INR'}}</div>
-            </div>
-          </div>
-          <div class="card-footer">
-            <div class="row">
-              <div class="col-8">Total: </div>
-              <div class="col-4">{{2770 | currency: 'INR'}}</div>
+            <div class="card-footer py-1 px-4">
+              <div class="row">
+                <div class="col-8">Total </div>
+                <div class="col-4">: {{2770 | currency: 'INR'}}</div>
+              </div>
             </div>
           </div>
         </div>
