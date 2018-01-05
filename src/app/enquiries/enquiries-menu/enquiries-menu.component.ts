@@ -15,7 +15,7 @@ export class EnquiriesMenuComponent implements OnInit {
       {name : 'ACCOMMODATION_AVAILABILITY', path : 'accomodation_availability'},
       {name : 'CURRENT_STATUS_OF_PASSENGERS', path : 'current_status_of_passengers'},
       {name : 'TIME_TABLE_ENQUIRY', path : 'time_table_enquiry'},
-      {name : 'FARE_ENQUIRY', path : ''},
+      {name : 'FARE_ENQUIRY', path : 'fare_enquiry'},
       {name : 'PNR_NUMBER_OF_PASSENGERS', path : ''},
       {name : 'DATE_OF_BOOKING_AND_SHIFT_ID', path : ''},
       {name : 'PNR_SESSION_HISTORY', path : ''},

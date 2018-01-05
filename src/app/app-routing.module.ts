@@ -7,6 +7,7 @@ import { EnquiriesMenuComponent } from './enquiries/enquiries-menu/enquiries-men
 import { AccomodationAvailabilityComponent } from './enquiries/accomodation-availability/accomodation-availability.component';
 import { CurrentStatusComponent } from './enquiries/current-status/current-status.component';
 import { TimeTableComponent } from './enquiries/time-table/time-table.component';
+import { FareEnquiryComponent } from './enquiries/fare-enquiry/fare-enquiry.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'accomodation_availability', component: AccomodationAvailabilityComponent },
       { path: 'current_status_of_passengers', component: CurrentStatusComponent },
       { path: 'time_table_enquiry', component: TimeTableComponent },
+      { path: 'fare_enquiry', component: FareEnquiryComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
