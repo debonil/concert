@@ -1,21 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 // @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 // @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import './assets/styles/custom-theme';
 
-@import './custom-theme';
-
+// //  --------- customise bootstrap begins ---------
 @import 'node_modules/bootstrap/scss/functions';
 @import './assets/styles/variables';
 @import 'node_modules/bootstrap/scss/bootstrap';
-
-// //  --------- customise bootstrap begins ---------
-// // @import "node_modules/bootstrap/scss/bootstrap";
-// $theme-colors: (
-//   "primary": #ff4136,
-//   "danger": #007bff
-// );
-// @import "node_modules/bootstrap/scss/bootstrap";
-
 // //  --------- customise bootstrap ends ---------
 
 /* ------ vertical align CSS begins ------- */
