@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="text-center text-xxl my-2 text-primary">
+  <div class="text-center text-xxl my-2 text-dark">
     <span>Enquiries</span>
   </div>
   <div class="row">
     <div class="col-xl-4 col-lg-6 col-12 my-1 mx-0" *ngFor="let enq of enquiriesList; let i = index;">
       <div [routerLink]="['/enquiries/' + enq.path]" tabindex="0" class="card py-2 px-1 bg-light text-secondary text-sm cursor-pointer">
-        <span class="text-dark"><span class="text-secondary px-1">{{i + 1}}.</span> {{enq.name}}</span>
+        <span class="text-dark"><span class="text-secondary px-1">{{i + 1 | number: '2.0-0'}}.</span> {{enq.name}}</span>
       </div>
     </div>
   </div>

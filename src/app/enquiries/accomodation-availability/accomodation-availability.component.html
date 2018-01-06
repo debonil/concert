@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card my-2">
-    <div class="card-header py-2 text-primary bg-light">
+    <div class="card-header py-2 text-dark bg-light">
         <span class="col-lg-9 col-md-6 col-12">
             Accomodation Availability
         </span>
@@ -79,7 +79,7 @@
 
   <div *ngIf="accomodationAvailabilityFetched" class="card my-3 text-center">
     <table class="table table-responsive table-bordered">
-      <thead class="text-primary bg-light">
+      <thead class="text-dark bg-light">
         <tr>
           <th scope="col">#</th>
           <td scope="col">Date</td>
@@ -89,7 +89,7 @@
       </thead>
       <tbody class="text-dark">
         <tr *ngFor="let avl of fetchedAccomodationAvailability; let i = index;">
-          <td scope="row" class="text-muted">{{i + 1 | number: '2.0-0'}}</td>
+          <td scope="row" class="text-primary">{{i + 1 | number: '2.0-0'}}</td>
           <td>{{todayDate | date: 'dd-MM-yyyy'}}</td>
           <td>{{avl.avl_2A}}</td>
           <td>{{avl.avl_SL}}</td>
