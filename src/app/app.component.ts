@@ -14,4 +14,9 @@ export class AppComponent {
     // console.log(event);
     return false;
   }
+
+  changeTheme(e: any) {
+    console.log(e);
+    this.theme = e;
+  }
 }
