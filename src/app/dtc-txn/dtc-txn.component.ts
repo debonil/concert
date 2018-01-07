@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dtc-txn.component.scss']
 })
 export class DtcTxnComponent implements OnInit {
+  activeCard: string = '';
 
   constructor() { }
 

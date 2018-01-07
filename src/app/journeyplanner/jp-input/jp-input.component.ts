@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import {Observable} from 'rxjs/Observable';
+import {startWith} from 'rxjs/operators/startWith';
+import {map} from 'rxjs/operators/map';
+import { CommonService } from '../../services/common.services';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-jp-input',
@@ -7,9 +13,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JpInputComponent implements OnInit {
 
-  constructor() { }
+  @Output() findTrains = new EventEmitter();
+
+  stnList = [];
+  origin: FormControl = new FormControl();
+  destin: FormControl = new FormControl();
+
+  journeyDate: Date = new Date();
+
+  filteredOriginOptions: Observable<string[]>;
+  filteredDestinOptions: Observable<string[]>;
+
+  modify: boolean = false;
+
+  constructor(private commonService: CommonService) {}
 
   ngOnInit() {
+    this.commonService.getStationNameList()
+    .subscribe((val: Array<string>) => {
+      this.stnList = val;
+      this.filteredOriginOptions = this.origin.valueChanges
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+      this.filteredDestinOptions = this.destin.valueChanges
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+    });
+  }
+
+  filter(val: string): string[] {
+    if (val.length>1)
+      return this.stnList.filter(option =>
+        option.toLowerCase().indexOf(val.toLowerCase()) === 0);
+    else
+      return [];
   }
 
 }

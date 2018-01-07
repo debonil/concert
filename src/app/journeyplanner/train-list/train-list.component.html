@@ -1,3 +1,96 @@
-<p>
-  train-list works!
-</p>
+<mat-drawer-container autosize class="bg-white">
+  <mat-drawer #drawer mode="side">
+    <app-filter-train-list></app-filter-train-list>
+  </mat-drawer>
+
+  <div class="container">
+    <div class="row bg-light my-3 py-3 rounded">
+      <div class="col-9 mx-2 text-secondary font-weight-bold">
+        <div>
+          NEW DELHI (NDLS)
+          <i class="material-icons vertical-align-middle">trending_flat</i>
+          BALLIA (BUI)
+        </div>
+        <div class="mx-2 font-weight-normal">
+          {{trainList.length}} trains found.
+        </div>
+      </div>
+      <div class="col-2">
+        <button type="button" mat-raised-button color="accent" (click)="drawer.toggle()">
+          Refine Results
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="false" class="container">
+    <div class="row bg-light text-center my-3 py-0">
+      <span class="col-md-4 col-12 mx-0 my-0">
+        <!-- <span>Select Quota: </span> -->
+        <mat-form-field>
+          <mat-select [(value)]="quota">
+            <mat-option value="">Select Quota</mat-option>
+            <mat-option value="GN">GENERAL</mat-option>
+            <mat-option value="LD">LADIES</mat-option>
+            <mat-option value="TQ">TATKAL</mat-option>
+            <mat-option value="PT">PREMIUM TATKAL</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+      <span class="col-md-4 col-12 mx-0 my-0">
+        <!-- <span>Select Class: </span> -->
+        <mat-form-field>
+          <mat-select [(value)]="class">
+            <mat-option value="">Select Class</mat-option>
+            <mat-option value="1A">AC 1 Tier</mat-option>
+            <mat-option value="2A">AC 2 Tier</mat-option>
+            <mat-option value="3A">AC 3 Tier</mat-option>
+            <mat-option value="3E">AC 3 Economy</mat-option>
+            <mat-option value="CC">AC Chair Car</mat-option>
+            <mat-option value="1A">Sleeper</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+      <span class="col-md-4 col-12 mx-0 my-0">
+        <!-- <span>Sort By: </span> -->
+        <mat-form-field>
+          <mat-select [(value)]="sortBy">
+            <!-- <mat-option value="">None</mat-option> -->
+            <mat-option value="">Sort By</mat-option>
+            <mat-option value="DT">Departure Time</mat-option>
+            <mat-option value="AT">Arrival Time</mat-option>
+            <mat-option value="JD">Journey Duration</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </span>
+    </div>
+  </div>
+  <div class="container bg-light pb-2 mb-2 rounded">
+    <div class="row text-primary my-2 py-2">
+      <div class="col-4 text-lg">
+        <span class="">
+                  Train Name &amp; No.
+        </span>
+      </div>
+      <div class="row col-6 text-center">
+        <div class="col-4">
+          Departs
+        </div>
+        <div class="col-4">
+          Arrives
+        </div>
+        <div class="col-4">
+          Duration
+        </div>
+      </div>
+      <div class="col-2 pull-right vertical-align-middle">
+        <span class="">Availability &amp; Fare</span>
+      </div>
+    </div>
+
+    <div class="container" *ngFor="let train of trainList; let i = index;">
+      <app-train [train]="train" [index]=i [selected]="selected" (trainSelected)="selected=i"></app-train>
+    </div>
+  </div>
+</mat-drawer-container>
+

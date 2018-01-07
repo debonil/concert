@@ -1,5 +1,2 @@
-<div class="container">
-  <p>
-    jp works!
-  </p>  
-</div>
+<app-jp-input (findTrains)="findTrains()"></app-jp-input>
+<app-train-list [trainList]="trainList" *ngIf="showTrainList"></app-train-list>
