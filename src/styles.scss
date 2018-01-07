@@ -6,7 +6,13 @@
 // //  --------- custom THEME begins ---------
 @import 'node_modules/bootstrap/scss/functions';
 
-@import './assets/styles/custom-theme';
+// @import './assets/styles/custom-theme';
+@import './assets/styles/theme-brown';
+// @import './assets/styles/theme-teal';
+
+// .custom-theme-teal {
+//   @import './assets/styles/custom-theme02';
+// }
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 // //  --------- custom THEME ends ---------
