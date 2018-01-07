@@ -2,21 +2,10 @@
 
 @include mat-core();
 
-$theme-teal-primary: mat-palette($mat-teal);
-$theme-teal-accent: mat-palette($mat-teal, 600, 500, 800);
-$theme-teal-warn: mat-palette($mat-red);
+$theme-primary: mat-palette($mat-teal);
+$theme-accent: mat-palette($mat-teal);
+$theme-warn: mat-palette($mat-red);
 
-$theme-teal: mat-light-theme($theme-teal-primary, $theme-teal-accent, $theme-teal-warn);
+$theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 @include angular-material-theme($theme-teal);
-
-$theme-colors: (
-  primary: #009688,
-  secondary: #009688,
-  success: #28a745,
-  info: #17a2b8,
-  warning: #ffc107,
-  danger: #F44336,
-  light: #E0F2F1,
-  dark: #004D40
-);

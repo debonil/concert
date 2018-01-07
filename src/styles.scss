@@ -7,8 +7,19 @@
 @import 'node_modules/bootstrap/scss/functions';
 
 // @import './assets/styles/custom-theme';
-@import './assets/styles/theme-brown';
-// @import './assets/styles/theme-teal';
+// @import './assets/styles/theme-brown';
+@import './assets/styles/theme-teal';
+
+$theme-colors: (
+  primary: mat-color($theme-primary),
+  secondary: mat-color($theme-accent),
+  success: #28a745,
+  info: #17a2b8,
+  warning: #ffc107,
+  danger: #F44336,
+  light: mat-color($theme-primary, 50),
+  dark: mat-color($theme-primary, 900)
+);
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 // //  --------- custom THEME ends ---------
