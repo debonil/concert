@@ -5,62 +5,9 @@
 
 // //  --------- custom THEME begins ---------
 @import 'node_modules/bootstrap/scss/functions';
-
-// @import './assets/styles/custom-theme';
-// @import './assets/styles/theme-brown';
-// @import './assets/styles/theme-teal';
-// @import './assets/styles/theme-grey';
-@import './assets/styles/theme-blue-grey';
-// @import './assets/styles/theme-indigo';
-// @import './assets/styles/theme-deep-purple';
-// @import './assets/styles/theme-light-blue';
-// @import './assets/styles/theme-pink';
-
-// $theme-colors: (
-//   primary: mat-color($theme-primary),
-//   secondary: mat-color($theme-accent, A700),
-//   success: #28a745,
-//   info: #17a2b8,
-//   warning: #ffc107,
-//   danger: #F44336,
-//   light: mat-color($theme-primary, 50),
-//   dark: mat-color($theme-primary, 700)
-// );
-
 @import 'node_modules/bootstrap/scss/bootstrap';
 
-.text-primary {
-  color: mat-color($theme-primary, 500) !important;
-}
-
-.text-secondary {
-  color: mat-color($theme-accent, A700) !important;
-}
-
-.text-light {
-  color: mat-color($theme-primary, 50) !important;
-}
-
-.text-dark {
-  color: mat-color($theme-primary, 700) !important;
-}
-
-.bg-light {
-  background-color:  mat-color($theme-primary, 50) !important;
-}
-
-.bg-dark {
-  background-color:  mat-color($theme-primary, 700) !important;
-}
-
-.border-primary {
-  border-color: mat-color($theme-primary, 500) !important;
-}
-
-.border-secondary {
-  border-color: mat-color($theme-accent, A700) !important;
-}
-
+@import './assets/styles/custom-theme';
 // //  --------- custom THEME ends ---------
 
 /* ------ vertical align CSS begins ------- */

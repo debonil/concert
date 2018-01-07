@@ -2,11 +2,144 @@
 
 @include mat-core();
 
-.theme-brown {
-  @import './theme-brown';
-  @include angular-material-theme($theme-brown);  
+// theme-default : (grey)
+$theme-primary: mat-palette($mat-grey);
+$theme-accent: mat-palette($mat-grey);
+$theme-warn: mat-palette($mat-red);
+$theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+@include angular-material-theme($theme-grey);
+
+.text-primary {
+  color: mat-color($theme-primary, 500) !important;
 }
-.theme-teal {
-  @import './theme-teal';
-  @include angular-material-theme($theme-teal);  
+
+.text-secondary {
+  color: mat-color($theme-accent, A700) !important;
+}
+
+.text-light {
+  color: mat-color($theme-primary, 50) !important;
+}
+
+.text-dark {
+  color: mat-color($theme-primary, 700) !important;
+}
+
+.bg-light {
+  background-color: mat-color($theme-primary, 50) !important;
+}
+
+.bg-dark {
+  background-color: mat-color($theme-primary, 700) !important;
+}
+
+.border-primary {
+  border-color: mat-color($theme-primary, 500) !important;
+}
+
+.border-secondary {
+  border-color: mat-color($theme-accent, A700) !important;
+}
+
+
+// theme-blue-grey : (blue-grey)
+$theme-primary: mat-palette($mat-blue-grey);
+$theme-accent: mat-palette($mat-blue-grey);
+$theme-warn: mat-palette($mat-red);
+$theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-blue-grey {
+  @include angular-material-theme($theme-blue-grey);
+  
+  .text-primary {
+    color: mat-color($theme-primary, 500) !important;
+  }
+  .text-secondary {
+    color: mat-color($theme-accent, A700) !important;
+  }
+  .text-light {
+    color: mat-color($theme-primary, 50) !important;
+  }
+  .text-dark {
+    color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-light {
+    background-color: mat-color($theme-primary, 50) !important;
+  }
+  .bg-dark {
+    background-color: mat-color($theme-primary, 700) !important;
+  }
+  .border-primary {
+    border-color: mat-color($theme-primary, 500) !important;
+  }
+  .border-secondary {
+    border-color: mat-color($theme-accent, A700) !important;
+  }
+}
+
+// theme-indigo : (indigo)
+$theme-primary: mat-palette($mat-indigo);
+$theme-accent: mat-palette($mat-indigo);
+$theme-warn: mat-palette($mat-red);
+$theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-indigo {
+  @include angular-material-theme($theme-indigo);
+  
+  .text-primary {
+    color: mat-color($theme-primary, 500) !important;
+  }
+  .text-secondary {
+    color: mat-color($theme-accent, A700) !important;
+  }
+  .text-light {
+    color: mat-color($theme-primary, 50) !important;
+  }
+  .text-dark {
+    color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-light {
+    background-color: mat-color($theme-primary, 50) !important;
+  }
+  .bg-dark {
+    background-color: mat-color($theme-primary, 700) !important;
+  }
+  .border-primary {
+    border-color: mat-color($theme-primary, 500) !important;
+  }
+  .border-secondary {
+    border-color: mat-color($theme-accent, A700) !important;
+  }
+}
+
+// theme-pink : (pink)
+$theme-primary: mat-palette($mat-pink);
+$theme-accent: mat-palette($mat-pink);
+$theme-warn: mat-palette($mat-red);
+$theme-pink: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-pink {
+  @include angular-material-theme($theme-pink);
+  
+  .text-primary {
+    color: mat-color($theme-primary, 500) !important;
+  }
+  .text-secondary {
+    color: mat-color($theme-accent, A700) !important;
+  }
+  .text-light {
+    color: mat-color($theme-primary, 50) !important;
+  }
+  .text-dark {
+    color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-light {
+    background-color: mat-color($theme-primary, 50) !important;
+  }
+  .bg-dark {
+    background-color: mat-color($theme-primary, 700) !important;
+  }
+  .border-primary {
+    border-color: mat-color($theme-primary, 500) !important;
+  }
+  .border-secondary {
+    border-color: mat-color($theme-accent, A700) !important;
+  }
 }

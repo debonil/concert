@@ -6,18 +6,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'CONCERT';
-  showLoader: boolean = true;
-
-  loader(e: boolean) {
-    if (e) {
-      this.showLoader = true;
-    } else {
-      setTimeout(()=>{
-        this.showLoader = false;
-      }, 2000);
-    }
-  }
+  title: string = 'CONCERT';
+  theme: string = 'theme-indigo';
 
   @HostListener('document:contextmenu', ['$event'])
   onDocumentRightClick(event) {
