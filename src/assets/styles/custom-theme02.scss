@@ -10,6 +10,18 @@ $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $cus
 
 @include angular-material-theme($custom-theme);
 
+
+// Define an alternate teal theme.
+$custom-theme-teal-primary: mat-palette($mat-teal);
+$custom-theme-teal-accent: mat-palette($mat-teal, 600, 500, 800);
+$custom-theme-teal-warn: mat-palette($mat-red);
+
+$custom-theme-teal: mat-light-theme($custom-theme-teal-primary, $custom-theme-teal-accent, $custom-theme-teal-warn);
+
+.custom-theme-teal {
+  @include angular-material-theme($custom-theme-teal);
+}
+
 $theme-colors: (
   primary: #795548,
   secondary: #795548,
