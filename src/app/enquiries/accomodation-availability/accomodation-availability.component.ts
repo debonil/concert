@@ -64,7 +64,7 @@ export class AccomodationAvailabilityComponent implements OnInit {
   }
 
   inputTrainNoChangeFn(e: KeyboardEvent) {
-    console.log('e: ' + e.key);
+    // console.log('e: ' + e.key);
 
     if (this.inputTrainNo.value.length === 5) {
       this.inputTrainName.setValue('SHIV GANGA EXP');

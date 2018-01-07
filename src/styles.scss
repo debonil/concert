@@ -50,6 +50,9 @@ div:focus {
 :focus {
   outline-color: theme-color("primary") !important;
 }
+a:hover {
+  text-decoration: none;  
+}
 /* ------- onFocus Outline CSS ends -----------  */
 
 /* ------------- font size CSS begins ---------------- */
