@@ -2,9 +2,10 @@
   [class.theme-indigo]="theme ==='theme-indigo'"
   [class.theme-teal]="theme ==='theme-teal'"
   [class.theme-blue-orange]="theme ==='theme-blue-orange'"
+  [class.theme-blue]="theme ==='theme-blue'"
   [class.theme-pink]="theme ==='theme-pink'">
   <app-header [themeIn]="theme" (themeOut)="changeTheme($event)"></app-header>
-  <div style="min-height:calc(100vh - 7.2rem)">
+  <div class="my-2" style="min-height:calc(100vh - 8.1rem)">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>

@@ -47,12 +47,13 @@
     </form> -->
     <ul class="navbar-nav mt-2 mt-lg-0">
       <li class="nav-item dropdown">
-        <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle rounded-circle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">format_color_fill</i>
         </a>
         <div class="dropdown-menu bg-dark text-light pull-left" style="left: -100px;" aria-labelledby="navbarDropdown">
           <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-grey')">Blue-Grey</a>
           <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-pink')">Pink</a>
+          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue')">Blue</a>
           <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-orange')">Blue & Orange</a>
           <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-indigo')">Indigo</a>
           <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-teal')">Teal</a>
