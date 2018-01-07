@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand text-primary font-weight-bold" href="#">CONCERT</a>
+  <a class="navbar-brand text-light font-weight-bold" href="#">CONCERT</a>
   <!-- <a class="navbar-brand text-secondary" href="#">CONCERT</a> -->
 
   <!-- <a class="navbar-brand" href="#">
@@ -15,35 +15,35 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a [routerLink]="['']" class="nav-link mr-xl-2 bg-light text-dark">Home</a>
+        <a [routerLink]="['']" class="nav-link mr-xl-2 bg-dark text-light">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-2 bg-light text-dark" href="#">Quick Book</a>
+        <a class="nav-link mr-xl-2 bg-dark text-light" href="#">Quick Book</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-2 bg-light text-dark" href="#">Modification</a>
+        <a class="nav-link mr-xl-2 bg-dark text-light" href="#">Modification</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mr-xl-2 bg-light text-dark" href="#">Cancellation</a>
+        <a class="nav-link mr-xl-2 bg-dark text-light" href="#">Cancellation</a>
       </li>
       <li class="nav-item">
-        <a [routerLink]="['/enquiries']" class="nav-link mr-xl-2 bg-light text-dark">Enquiries</a>
+        <a [routerLink]="['/enquiries']" class="nav-link mr-xl-2 bg-dark text-light">Enquiries</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link mr-xl-2 bg-light text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           My Account
         </a>
-        <div class="dropdown-menu bg-light text-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-light text-dark" href="#">Change Password</a>
-          <a [routerLink]="['/dtcTxn']" class="dropdown-item bg-light text-dark" href="#">DTC transactions</a>
+        <div class="dropdown-menu bg-dark text-light" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item bg-dark text-light" href="#">Change Password</a>
+          <a [routerLink]="['/dtcTxn']" class="dropdown-item bg-dark text-light" href="#">DTC transactions</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item bg-light text-dark" href="#">Logout</a>
+          <a class="dropdown-item bg-dark text-light" href="#">Logout</a>
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form> -->
   </div>
 </nav>
