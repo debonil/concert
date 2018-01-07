@@ -7,8 +7,11 @@
 @import 'node_modules/bootstrap/scss/functions';
 
 // @import './assets/styles/custom-theme';
-// @import './assets/styles/theme-brown';
-@import './assets/styles/theme-teal';
+@import './assets/styles/theme-brown';
+// @import './assets/styles/theme-teal';
+// @import './assets/styles/theme-grey';
+// @import './assets/styles/theme-blue-grey';
+// @import './assets/styles/theme-indigo';
 
 $theme-colors: (
   primary: mat-color($theme-primary),
