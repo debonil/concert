@@ -7,7 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'CONCERT';
-  theme: string = 'theme-indigo';
+  theme: string = 'theme-blue-grey';
 
   @HostListener('document:contextmenu', ['$event'])
   onDocumentRightClick(event) {

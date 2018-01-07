@@ -110,6 +110,40 @@ $theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
 }
 
+// theme-teal : (teal)
+$theme-primary: mat-palette($mat-teal);
+$theme-accent: mat-palette($mat-teal);
+$theme-warn: mat-palette($mat-red);
+$theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-teal {
+  @include angular-material-theme($theme-teal);
+  
+  .text-primary {
+    color: mat-color($theme-primary, 500) !important;
+  }
+  .text-secondary {
+    color: mat-color($theme-accent, A700) !important;
+  }
+  .text-light {
+    color: mat-color($theme-primary, 50) !important;
+  }
+  .text-dark {
+    color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-light {
+    background-color: mat-color($theme-primary, 50) !important;
+  }
+  .bg-dark {
+    background-color: mat-color($theme-primary, 700) !important;
+  }
+  .border-primary {
+    border-color: mat-color($theme-primary, 500) !important;
+  }
+  .border-secondary {
+    border-color: mat-color($theme-accent, A700) !important;
+  }
+}
+
 // theme-pink : (pink)
 $theme-primary: mat-palette($mat-pink);
 $theme-accent: mat-palette($mat-pink);

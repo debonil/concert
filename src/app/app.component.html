@@ -1,5 +1,6 @@
 <div [class.theme-blue-grey]="theme ==='theme-blue-grey'"
   [class.theme-indigo]="theme ==='theme-indigo'"
+  [class.theme-teal]="theme ==='theme-teal'"
   [class.theme-pink]="theme ==='theme-pink'">
   <app-header [themeIn]="theme" (themeOut)="changeTheme($event)"></app-header>
   <div style="min-height:calc(100vh - 7.2rem)">
