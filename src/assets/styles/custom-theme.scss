@@ -2,21 +2,30 @@
 
 @include mat-core();
 
-$custom-theme-primary: mat-palette($mat-brown);
-$custom-theme-accent: mat-palette($mat-brown, 600, 500, 800);
-$custom-theme-warn: mat-palette($mat-red);
+.theme-brown {
+  @import './theme-brown';
+  @include angular-material-theme($theme-brown);  
+}
+.theme-teal {
+  @import './theme-teal';
+  @include angular-material-theme($theme-teal);  
+}
 
-$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+// $custom-theme-primary: mat-palette($mat-brown);
+// $custom-theme-accent: mat-palette($mat-brown, 600, 500, 800);
+// $custom-theme-warn: mat-palette($mat-red);
 
-@include angular-material-theme($custom-theme);
+// $custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
 
-$theme-colors: (
-  primary: #795548,
-  secondary: #795548,
-  success: #28a745,
-  info: #17a2b8,
-  warning: #ffc107,
-  danger: #F44336,
-  light: #EFEBE9,
-  dark: #3E2723
-);
+// @include angular-material-theme($custom-theme);
+
+// $theme-colors: (
+//   primary: #795548,
+//   secondary: #795548,
+//   success: #28a745,
+//   info: #17a2b8,
+//   warning: #ffc107,
+//   danger: #F44336,
+//   light: #EFEBE9,
+//   dark: #3E2723
+// );
