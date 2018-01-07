@@ -15,7 +15,7 @@
 
 $theme-colors: (
   primary: mat-color($theme-primary),
-  secondary: mat-color($theme-accent),
+  secondary: mat-color($theme-accent, A700),
   success: #28a745,
   info: #17a2b8,
   warning: #ffc107,
