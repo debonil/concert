@@ -17,6 +17,7 @@ import { PassengersCancelledAfterChartingComponent } from './enquiries/passenger
 import { CoachPositionComponent } from './enquiries/coach-position/coach-position.component';
 import { AccomodationAvailabilityForADestinationComponent } from './enquiries/accomodation-availability-for-a-destination/accomodation-availability-for-a-destination.component';
 import { TrainsForADestinationComponent } from './enquiries/trains-for-a-destination/trains-for-a-destination.component';
+import { NtesTrainStatusComponent } from './enquiries/ntes-train-status/ntes-train-status.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: 'coach_position_enquiry', component: CoachPositionComponent },
       { path: 'accommodation_avlblty_for_a_dstn', component: AccomodationAvailabilityForADestinationComponent },
       { path: 'all_trains_for_a_destination', component: TrainsForADestinationComponent },
+      { path: 'ntes_train_status', component: NtesTrainStatusComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},

@@ -39,7 +39,7 @@ export class EnquiriesMenuComponent implements OnInit {
       // {name : 'DUPLICATE_ALLOTMENT_PASSENGERS_LIST', path : ''},
       // {name : 'CUR._BKG._AVAILABILITY(REMOTE_WISE)', path : ''},
       // {name : 'AUTH_PNR_ENQUIRY', path : ''},
-      // {name : 'NTES_—_TRAIN_STATUS', path : ''},
+      {name : 'NTES TRAIN STATUS', path : 'ntes_train_status'},
       // {name : 'BERTH_TYPE_AVAILABILITY', path : ''},
       // {name : 'ITDC_RELEASE_PENDING_ENQUIRY', path : ''},
     ]
