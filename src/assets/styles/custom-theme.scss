@@ -25,6 +25,14 @@ $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   color: mat-color($theme-primary, 700) !important;
 }
 
+.bg-primary {
+  background-color: mat-color($theme-primary, 500) !important;
+}
+
+.bg-secondary {
+  background-color: mat-color($theme-accent, A700) !important;
+}
+
 .bg-light {
   background-color: mat-color($theme-primary, 50) !important;
 }
@@ -49,7 +57,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-blue-grey {
   @include angular-material-theme($theme-blue-grey);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -61,6 +69,12 @@ $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -83,7 +97,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-indigo {
   @include angular-material-theme($theme-indigo);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -95,6 +109,12 @@ $theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -117,7 +137,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-teal {
   @include angular-material-theme($theme-teal);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -129,6 +149,12 @@ $theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -151,7 +177,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-blue: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-blue {
   @include angular-material-theme($theme-blue);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -163,6 +189,12 @@ $theme-blue: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -185,7 +217,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-blue-orange: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-blue-orange {
   @include angular-material-theme($theme-blue-orange);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -197,6 +229,12 @@ $theme-blue-orange: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -219,7 +257,7 @@ $theme-warn: mat-palette($mat-red);
 $theme-pink: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-pink {
   @include angular-material-theme($theme-pink);
-  
+
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
@@ -231,6 +269,12 @@ $theme-pink: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .text-dark {
     color: mat-color($theme-primary, 700) !important;
+  }
+  .bg-primary {
+    background-color: mat-color($theme-primary, 500) !important;
+  }
+  .bg-secondary {
+    background-color: mat-color($theme-accent, A700) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
