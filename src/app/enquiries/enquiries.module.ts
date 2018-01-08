@@ -21,6 +21,8 @@ import { TrainsForADestinationComponent } from './trains-for-a-destination/train
 import { NtesTrainStatusComponent } from './ntes-train-status/ntes-train-status.component';
 import { ChartingStatusComponent } from './charting-status/charting-status.component';
 import { BerthTypeAvailabilityComponent } from './berth-type-availability/berth-type-availability.component';
+import { CurrentBookingAvailabilityComponent } from './current-booking-availability/current-booking-availability.component';
+import { CurBkgAvailabilityRemoteWiseComponent } from './cur-bkg-availability-remote-wise/cur-bkg-availability-remote-wise.component';
 
 @NgModule({
   imports: [
@@ -29,7 +31,7 @@ import { BerthTypeAvailabilityComponent } from './berth-type-availability/berth-
     AppRoutingModule,
     MyMaterialComponentsModule
   ],
-  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent, CoachPositionComponent, AccomodationAvailabilityForADestinationComponent, TrainsForADestinationComponent, NtesTrainStatusComponent, ChartingStatusComponent, BerthTypeAvailabilityComponent],
+  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent, CoachPositionComponent, AccomodationAvailabilityForADestinationComponent, TrainsForADestinationComponent, NtesTrainStatusComponent, ChartingStatusComponent, BerthTypeAvailabilityComponent, CurrentBookingAvailabilityComponent, CurBkgAvailabilityRemoteWiseComponent],
   exports: [EnquiriesComponent]
 })
 export class EnquiriesModule { }

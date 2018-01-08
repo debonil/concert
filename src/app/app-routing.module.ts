@@ -20,6 +20,8 @@ import { TrainsForADestinationComponent } from './enquiries/trains-for-a-destina
 import { NtesTrainStatusComponent } from './enquiries/ntes-train-status/ntes-train-status.component';
 import { ChartingStatusComponent } from './enquiries/charting-status/charting-status.component';
 import { BerthTypeAvailabilityComponent } from './enquiries/berth-type-availability/berth-type-availability.component';
+import { CurrentBookingAvailabilityComponent } from './enquiries/current-booking-availability/current-booking-availability.component';
+import { CurBkgAvailabilityRemoteWiseComponent } from './enquiries/cur-bkg-availability-remote-wise/cur-bkg-availability-remote-wise.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -46,6 +48,8 @@ const routes: Routes = [
       { path: 'ntes_train_status', component: NtesTrainStatusComponent },
       { path: 'charting_status', component: ChartingStatusComponent },
       { path: 'berth_type_availability', component: BerthTypeAvailabilityComponent },
+      { path: 'current_booking_availability', component: CurrentBookingAvailabilityComponent },
+      { path: 'cur_bkg_availability_remote_wise', component: CurBkgAvailabilityRemoteWiseComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
