@@ -13,6 +13,7 @@ import { BookingDateTimeComponent } from './enquiries/booking-date-time/booking-
 import { PnrSessionHistoryComponent } from './enquiries/pnr-session-history/pnr-session-history.component';
 import { PassengersBookedInEachCoachComponent } from './enquiries/passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
 import { PassengersBookedAfterChartingComponent } from './enquiries/passengers-booked-after-charting/passengers-booked-after-charting.component';
+import { PassengersCancelledAfterChartingComponent } from './enquiries/passengers-cancelled-after-charting/passengers-cancelled-after-charting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'pnr_session_history', component: PnrSessionHistoryComponent },
       { path: 'passegners_booked_in_each_coach', component: PassengersBookedInEachCoachComponent },
       { path: 'passengers_booked_after_charting', component: PassengersBookedAfterChartingComponent },
+      { path: 'passengers_cancelled_after_charting', component: PassengersCancelledAfterChartingComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},

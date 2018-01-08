@@ -2,7 +2,7 @@
   <div class="card my-2">
     <div class="card-header py-2 text-secondary bg-light">
       <span>
-        Passengers Booked after Charting
+        Passengers Cancelled after Charting
       </span>
     </div>
     <form [formGroup]="accomodationAvailabilityForm" class="card-body text-dark pt-2 pb-0 text-sm" (submit)="fetchAccomodationAvailability()">
@@ -31,7 +31,7 @@
             <mat-option value="1A">Sleeper</mat-option>
           </mat-select>
           <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-            <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+              <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
         </mat-form-field>
         <mat-form-field class="col-md-3 col-sm-6 col-12 mx-0">
           <input matInput [matDatepicker]="picker" placeholder="Journey date" required>
@@ -58,7 +58,7 @@
             <td scope="col">Sex</td>
             <td scope="col">Age</td>
             <td scope="col">Quota</td>
-            <td scope="col">Berth</td>
+            <td scope="col">Vacant Berths</td>
             <td scope="col">Source</td>
             <td scope="col">Destination</td>
           </tr>

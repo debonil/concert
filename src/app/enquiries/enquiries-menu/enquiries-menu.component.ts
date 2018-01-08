@@ -26,7 +26,7 @@ export class EnquiriesMenuComponent implements OnInit {
       // {name : 'ALL_CLASSES_ACCOMMODATION_AVLBLTY', path : ''},
       // {name : 'ACCOMMODATION_AVLBLTY_FOR_A_DSTN', path : ''},
       // {name : 'OPERATOR_INSTRUCTIONS', path : ''},
-      // {name : 'PASSENGERS_CANCELLED_AFTER_CHARTING', path : ''},
+      {name : 'PASSENGERS_CANCELLED_AFTER_CHARTING', path : 'passengers_cancelled_after_charting'},
       // {name : 'ALL_CLASSES_FARE_ENQUIRY', path : ''},
       // {name : 'INTERMEDIATE_STATIONS_TIME_TABLE', path : ''},
       // {name : 'DETAILED_PNR_ENQUIRY', path : ''},
