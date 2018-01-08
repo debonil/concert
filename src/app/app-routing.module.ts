@@ -10,6 +10,8 @@ import { TimeTableComponent } from './enquiries/time-table/time-table.component'
 import { FareEnquiryComponent } from './enquiries/fare-enquiry/fare-enquiry.component';
 import { SearchForPnrComponent } from './enquiries/search-for-pnr/search-for-pnr.component';
 import { BookingDateTimeComponent } from './enquiries/booking-date-time/booking-date-time.component';
+import { PnrSessionHistoryComponent } from './enquiries/pnr-session-history/pnr-session-history.component';
+import { PassengersBookedInEachCoachComponent } from './enquiries/passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -26,6 +28,8 @@ const routes: Routes = [
       { path: 'fare_enquiry', component: FareEnquiryComponent },
       { path: 'search_for_pnr', component: SearchForPnrComponent },
       { path: 'booking_date_time', component: BookingDateTimeComponent },
+      { path: 'pnr_session_history', component: PnrSessionHistoryComponent },
+      { path: 'passegners_booked_in_each_coach', component: PassengersBookedInEachCoachComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
