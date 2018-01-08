@@ -31,7 +31,7 @@ export class EnquiriesMenuComponent implements OnInit {
       {name : 'INTERMEDIATE_STATIONS_TIME_TABLE', path : ''},
       {name : 'DETAILED_PNR_ENQUIRY', path : ''},
       {name : 'ALL_REMOTE_LOCNS_CHARTING_STATUS', path : ''},
-      {name : 'PASSENGERS_BOOKED_AFTER_CHARTING', path : ''},
+      {name : 'PASSENGERS_BOOKED_AFTER_CHARTING', path : 'passengers_booked_after_charting'},
       {name : 'CURRENT_BOOKING_AVAILABILITY', path : ''},
       {name : 'REFUNDED_PNR_ENQUIRY', path : ''},
       {name : 'COACH_POSITION_ENQUIRY', path : ''},

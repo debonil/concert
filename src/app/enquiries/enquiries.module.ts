@@ -13,6 +13,7 @@ import { SearchForPnrComponent } from './search-for-pnr/search-for-pnr.component
 import { BookingDateTimeComponent } from './booking-date-time/booking-date-time.component';
 import { PnrSessionHistoryComponent } from './pnr-session-history/pnr-session-history.component';
 import { PassengersBookedInEachCoachComponent } from './passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
+import { PassengersBookedAfterChartingComponent } from './passengers-booked-after-charting/passengers-booked-after-charting.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { PassengersBookedInEachCoachComponent } from './passengers-booked-in-eac
     AppRoutingModule,
     MyMaterialComponentsModule
   ],
-  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent],
+  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent],
   exports: [EnquiriesComponent]
 })
 export class EnquiriesModule { }

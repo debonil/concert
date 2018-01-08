@@ -12,6 +12,7 @@ import { SearchForPnrComponent } from './enquiries/search-for-pnr/search-for-pnr
 import { BookingDateTimeComponent } from './enquiries/booking-date-time/booking-date-time.component';
 import { PnrSessionHistoryComponent } from './enquiries/pnr-session-history/pnr-session-history.component';
 import { PassengersBookedInEachCoachComponent } from './enquiries/passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
+import { PassengersBookedAfterChartingComponent } from './enquiries/passengers-booked-after-charting/passengers-booked-after-charting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'booking_date_time', component: BookingDateTimeComponent },
       { path: 'pnr_session_history', component: PnrSessionHistoryComponent },
       { path: 'passegners_booked_in_each_coach', component: PassengersBookedInEachCoachComponent },
+      { path: 'passengers_booked_after_charting', component: PassengersBookedAfterChartingComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
