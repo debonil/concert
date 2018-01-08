@@ -34,7 +34,7 @@ export class EnquiriesMenuComponent implements OnInit {
       {name : 'PASSENGERS_BOOKED_AFTER_CHARTING', path : 'passengers_booked_after_charting'},
       // {name : 'CURRENT_BOOKING_AVAILABILITY', path : ''},
       // {name : 'REFUNDED_PNR_ENQUIRY', path : ''},
-      // {name : 'COACH_POSITION_ENQUIRY', path : ''},
+      {name : 'COACH_POSITION_ENQUIRY', path : 'coach_position_enquiry'},
       // {name : 'WAITING_LIST_ENQUIRY', path : ''},
       // {name : 'DUPLICATE_ALLOTMENT_PASSENGERS_LIST', path : ''},
       // {name : 'CUR._BKG._AVAILABILITY(REMOTE_WISE)', path : ''},

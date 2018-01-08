@@ -14,6 +14,7 @@ import { PnrSessionHistoryComponent } from './enquiries/pnr-session-history/pnr-
 import { PassengersBookedInEachCoachComponent } from './enquiries/passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
 import { PassengersBookedAfterChartingComponent } from './enquiries/passengers-booked-after-charting/passengers-booked-after-charting.component';
 import { PassengersCancelledAfterChartingComponent } from './enquiries/passengers-cancelled-after-charting/passengers-cancelled-after-charting.component';
+import { CoachPositionComponent } from './enquiries/coach-position/coach-position.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -34,6 +35,7 @@ const routes: Routes = [
       { path: 'passegners_booked_in_each_coach', component: PassengersBookedInEachCoachComponent },
       { path: 'passengers_booked_after_charting', component: PassengersBookedAfterChartingComponent },
       { path: 'passengers_cancelled_after_charting', component: PassengersCancelledAfterChartingComponent },
+      { path: 'coach_position_enquiry', component: CoachPositionComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
