@@ -10,6 +10,7 @@ import { CurrentStatusComponent } from './current-status/current-status.componen
 import { TimeTableComponent } from './time-table/time-table.component';
 import { FareEnquiryComponent } from './fare-enquiry/fare-enquiry.component';
 import { SearchForPnrComponent } from './search-for-pnr/search-for-pnr.component';
+import { BookingDateTimeComponent } from './booking-date-time/booking-date-time.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { SearchForPnrComponent } from './search-for-pnr/search-for-pnr.component
     AppRoutingModule,
     MyMaterialComponentsModule
   ],
-  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent],
+  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent],
   exports: [EnquiriesComponent]
 })
 export class EnquiriesModule { }
