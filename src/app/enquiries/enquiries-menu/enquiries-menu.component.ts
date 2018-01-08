@@ -24,7 +24,7 @@ export class EnquiriesMenuComponent implements OnInit {
       // {name : 'VACANT_BERTH_ENQUIRY__FROM_HHT', path : ''},
       // {name : 'QTAWISE_ACCOMMODATION_AVAILABILITY', path : ''},
       // {name : 'ALL_CLASSES_ACCOMMODATION_AVLBLTY', path : ''},
-      // {name : 'ACCOMMODATION_AVLBLTY_FOR_A_DSTN', path : ''},
+      {name : 'ACCOMMODATION_AVLBLTY_FOR_A_DSTN', path : 'accommodation_avlblty_for_a_dstn'},
       // {name : 'OPERATOR_INSTRUCTIONS', path : ''},
       {name : 'PASSENGERS_CANCELLED_AFTER_CHARTING', path : 'passengers_cancelled_after_charting'},
       // {name : 'ALL_CLASSES_FARE_ENQUIRY', path : ''},
