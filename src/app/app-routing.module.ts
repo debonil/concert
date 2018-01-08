@@ -8,6 +8,7 @@ import { AccomodationAvailabilityComponent } from './enquiries/accomodation-avai
 import { CurrentStatusComponent } from './enquiries/current-status/current-status.component';
 import { TimeTableComponent } from './enquiries/time-table/time-table.component';
 import { FareEnquiryComponent } from './enquiries/fare-enquiry/fare-enquiry.component';
+import { SearchForPnrComponent } from './enquiries/search-for-pnr/search-for-pnr.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'current_status_of_passengers', component: CurrentStatusComponent },
       { path: 'time_table_enquiry', component: TimeTableComponent },
       { path: 'fare_enquiry', component: FareEnquiryComponent },
+      { path: 'search_for_pnr', component: SearchForPnrComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
