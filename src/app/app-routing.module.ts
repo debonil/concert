@@ -19,6 +19,7 @@ import { AccomodationAvailabilityForADestinationComponent } from './enquiries/ac
 import { TrainsForADestinationComponent } from './enquiries/trains-for-a-destination/trains-for-a-destination.component';
 import { NtesTrainStatusComponent } from './enquiries/ntes-train-status/ntes-train-status.component';
 import { ChartingStatusComponent } from './enquiries/charting-status/charting-status.component';
+import { BerthTypeAvailabilityComponent } from './enquiries/berth-type-availability/berth-type-availability.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'all_trains_for_a_destination', component: TrainsForADestinationComponent },
       { path: 'ntes_train_status', component: NtesTrainStatusComponent },
       { path: 'charting_status', component: ChartingStatusComponent },
+      { path: 'berth_type_availability', component: BerthTypeAvailabilityComponent },
     ]
   },
   { path: 'dtcTxn', component: DtcTxnComponent},
