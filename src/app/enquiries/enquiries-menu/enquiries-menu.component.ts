@@ -20,7 +20,7 @@ export class EnquiriesMenuComponent implements OnInit {
       {name : 'BOOKING DATE TIME', path : 'booking_date_time'},
       {name : 'PNR_SESSION_HISTORY', path : 'pnr_session_history'},
       {name : 'PASSEGNERS_BOOKED_IN_EACH_COACH', path : 'passegners_booked_in_each_coach'},
-      // {name : 'ALL_TRAINS_FOR_A_DESTINATION', path : ''},
+      {name : 'ALL_TRAINS_FOR_A_DESTINATION', path : 'all_trains_for_a_destination'},
       // {name : 'VACANT_BERTH_ENQUIRY__FROM_HHT', path : ''},
       // {name : 'QTAWISE_ACCOMMODATION_AVAILABILITY', path : ''},
       // {name : 'ALL_CLASSES_ACCOMMODATION_AVLBLTY', path : ''},

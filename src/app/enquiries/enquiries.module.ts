@@ -17,6 +17,7 @@ import { PassengersBookedAfterChartingComponent } from './passengers-booked-afte
 import { PassengersCancelledAfterChartingComponent } from './passengers-cancelled-after-charting/passengers-cancelled-after-charting.component';
 import { CoachPositionComponent } from './coach-position/coach-position.component';
 import { AccomodationAvailabilityForADestinationComponent } from './accomodation-availability-for-a-destination/accomodation-availability-for-a-destination.component';
+import { TrainsForADestinationComponent } from './trains-for-a-destination/trains-for-a-destination.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { AccomodationAvailabilityForADestinationComponent } from './accomodation
     AppRoutingModule,
     MyMaterialComponentsModule
   ],
-  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent, CoachPositionComponent, AccomodationAvailabilityForADestinationComponent],
+  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent, CoachPositionComponent, AccomodationAvailabilityForADestinationComponent, TrainsForADestinationComponent],
   exports: [EnquiriesComponent]
 })
 export class EnquiriesModule { }
