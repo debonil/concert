@@ -37,7 +37,7 @@ export class EnquiriesMenuComponent implements OnInit {
       {name : 'COACH POSITION ENQUIRY', path : 'coach_position_enquiry'},
       // {name : 'WAITING_LIST_ENQUIRY', path : ''},
       // {name : 'DUPLICATE_ALLOTMENT_PASSENGERS_LIST', path : ''},
-      {name : 'CUR BKG AVAILABILITY REMOTE WISE', path : 'cur_bkg_availability_remote_wise'},
+      // {name : 'CUR BKG AVAILABILITY REMOTE WISE', path : 'cur_bkg_availability_remote_wise'},
       // {name : 'AUTH_PNR_ENQUIRY', path : ''},
       {name : 'NTES TRAIN STATUS', path : 'ntes_train_status'},
       {name : 'BERTH TYPE AVAILABILITY', path : 'berth_type_availability'},
