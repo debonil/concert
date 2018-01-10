@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card my-2">
-    <div class="card-header py-2 bg-light text-secondary font-weight-bold">
+    <div class="card-header py-2 bg-light text-dark font-weight-bold">
       <span>
         Coach Position Enquiry
       </span>
@@ -37,7 +37,7 @@
         </mat-form-field>
         <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
           <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100" type="submit">Submit</button>
-          <button *ngIf="accomodationAvailabilityFetched" mat-button color="accent" class="border border-secondary rounded w-100" (click)="accomodationAvailabilityFetched=false">Reset</button>
+          <button *ngIf="accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100" (click)="accomodationAvailabilityFetched=false">Reset</button>
         </div>
       </div>
     </form>
