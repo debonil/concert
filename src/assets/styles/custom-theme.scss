@@ -1,56 +1,52 @@
 @import '../node_modules/@angular/material/theming';
-
 @include mat-core();
 
 // theme-default : (grey)
 $theme-primary: mat-palette($mat-grey);
-$theme-accent: mat-palette($mat-grey);
+$theme-accent: mat-palette($mat-teal);
 $theme-warn: mat-palette($mat-red);
 $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 @include angular-material-theme($theme-grey);
-
 .text-primary {
   color: mat-color($theme-primary, 500) !important;
 }
-
 .text-secondary {
   color: mat-color($theme-accent, A700) !important;
 }
-
 .text-light {
   color: mat-color($theme-primary, 50) !important;
 }
-
 .text-dark {
   color: mat-color($theme-primary, 700) !important;
 }
-
 .bg-primary {
   background-color: mat-color($theme-primary, 500) !important;
 }
-
 .bg-secondary {
   background-color: mat-color($theme-accent, A700) !important;
 }
-
 .bg-light {
   background-color: mat-color($theme-primary, 50) !important;
 }
-
 .bg-dark {
   background-color: mat-color($theme-primary, 700) !important;
 }
-
 .border-primary {
   border-color: mat-color($theme-primary, 500) !important;
 }
-
 .border-secondary {
   border-color: mat-color($theme-accent, A700) !important;
 }
-
 .border-dark {
   border-color: mat-color($theme-primary, 700) !important;
+}
+div:focus {
+  outline:none !important;
+  border-color: mat-color($theme-accent, A700) !important;
+  box-shadow:0 0 2px mat-color($theme-accent, A700) !important;
+}
+:focus {
+  outline-color: mat-color($theme-accent, A700) !important;
 }
 
 
@@ -95,21 +91,29 @@ $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   .border-dark {
     border-color: mat-color($theme-primary, 700) !important;
   }
+  div:focus {
+    outline:none !important;
+    border-color: mat-color($theme-accent, A700) !important;
+    box-shadow:0 0 2px mat-color($theme-accent, A700) !important;
+  }
+  :focus {
+    outline-color: mat-color($theme-accent, A700) !important;
+  }  
 }
 
-// theme-indigo : (indigo)
-$theme-primary: mat-palette($mat-indigo);
-$theme-accent: mat-palette($mat-indigo);
+// theme-teal : (teal)
+$theme-primary: mat-palette($mat-teal);
+$theme-accent: mat-palette($mat-deep-orange, 400);
 $theme-warn: mat-palette($mat-red);
-$theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-.theme-indigo {
-  @include angular-material-theme($theme-indigo);
+$theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-teal {
+  @include angular-material-theme($theme-teal);
 
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
   }
   .text-secondary {
-    color: mat-color($theme-accent, A700) !important;
+    color: mat-color($theme-accent, 400) !important;
   }
   .text-light {
     color: mat-color($theme-primary, 50) !important;
@@ -121,7 +125,7 @@ $theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
     background-color: mat-color($theme-primary, 500) !important;
   }
   .bg-secondary {
-    background-color: mat-color($theme-accent, A700) !important;
+    background-color: mat-color($theme-accent, 400) !important;
   }
   .bg-light {
     background-color: mat-color($theme-primary, 50) !important;
@@ -133,20 +137,28 @@ $theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
     border-color: mat-color($theme-primary, 500) !important;
   }
   .border-secondary {
-    border-color: mat-color($theme-accent, A700) !important;
+    border-color: mat-color($theme-accent, 400) !important;
   }
   .border-dark {
     border-color: mat-color($theme-primary, 700) !important;
   }
+  div:focus {
+    outline:none !important;
+    border-color: mat-color($theme-accent, 400) !important;
+    box-shadow:0 0 2px mat-color($theme-accent, 400) !important;
+  }
+  :focus {
+    outline-color: mat-color($theme-accent, 400) !important;
+  }
 }
 
-// theme-teal : (teal)
-$theme-primary: mat-palette($mat-teal);
-$theme-accent: mat-palette($mat-teal);
+// theme-indigo : (indigo)
+$theme-primary: mat-palette($mat-indigo);
+$theme-accent: mat-palette($mat-indigo);
 $theme-warn: mat-palette($mat-red);
-$theme-teal: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-.theme-teal {
-  @include angular-material-theme($theme-teal);
+$theme-indigo: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+.theme-indigo {
+  @include angular-material-theme($theme-indigo);
 
   .text-primary {
     color: mat-color($theme-primary, 500) !important;
