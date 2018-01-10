@@ -98,8 +98,8 @@
           <mat-datepicker #picker startView="month" [startAt]="todayDate"></mat-datepicker>
         </mat-form-field>
         <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
-          <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100" type="submit">Fetch Fare</button>
-          <button *ngIf="accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100" (click)="accomodationAvailabilityFetched=false">Reset</button>
+          <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Fetch Fare</button>
+          <button *ngIf="accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" (click)="accomodationAvailabilityFetched=false">Reset</button>
         </div>
       </div>
     </form>

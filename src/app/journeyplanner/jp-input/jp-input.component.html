@@ -28,8 +28,12 @@
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker startView="month" [startAt]="journeyDate"></mat-datepicker>
         </mat-form-field>
-        <button *ngIf="!modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Find Trains</button>
-        <button *ngIf="modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Modify Search</button>
+        <!-- <button *ngIf="!modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Find Trains</button>
+        <button *ngIf="modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Modify Search</button> -->
+        <div class="col-lg-3 col-md-6 col-12 px-3 mb-3 my-2">
+          <button *ngIf="!modify" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Find Trains</button>
+          <button *ngIf="modify" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Modify Search</button>    
+        </div>
       </form>
     </div>
   </div>
