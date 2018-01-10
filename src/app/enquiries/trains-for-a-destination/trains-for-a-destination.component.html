@@ -7,25 +7,21 @@
     </div>
     <form [formGroup]="accomodationAvailabilityForm" class="card-body pt-2 pb-0 text-sm" (submit)="fetchAccomodationAvailability()">
       <div class="row">
-        <mat-form-field class="col-md-3 col-sm-6 col-12">
-          <mat-select placeholder="Source" required>
-            <!-- <mat-option>Select Source</mat-option> -->
-            <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
-              {{stn.stnName}} ({{stn.stnCode}})
+        <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
+          <input type="text" placeholder="Origin" aria-label="Number" matInput [formControl]="origin" [matAutocomplete]="autoOrigin">
+          <mat-autocomplete #autoOrigin="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOriginOptions | async" [value]="option">
+              {{ option }}
             </mat-option>
-          </mat-select>
-          <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-              <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field class="col-md-3 col-sm-6 col-12">
-          <mat-select placeholder="Destination" required>
-            <!-- <mat-option>Select Destination</mat-option> -->
-            <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
-              {{stn.stnName}} ({{stn.stnCode}})
+        <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
+          <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="destin" [matAutocomplete]="autoDestin">
+          <mat-autocomplete #autoDestin="matAutocomplete">
+            <mat-option *ngFor="let option of filteredDestinOptions | async" [value]="option">
+              {{ option }}
             </mat-option>
-          </mat-select>
-          <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
-              <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-autocomplete>
         </mat-form-field>
         <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
           <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100" type="submit">Fetch Trains</button>

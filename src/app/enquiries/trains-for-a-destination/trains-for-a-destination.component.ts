@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms/src/model';
 import { MatSnackBar } from '@angular/material';
+import {Observable} from 'rxjs/Observable';
+import {startWith} from 'rxjs/operators/startWith';
+import {map} from 'rxjs/operators/map';
+import { CommonService } from '../../services/common.services';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-trains-for-a-destination',
@@ -9,7 +14,18 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./trains-for-a-destination.component.scss']
 })
 export class TrainsForADestinationComponent implements OnInit {
-  departsOn: string;
+
+  stnList = [];
+  origin: FormControl = new FormControl();
+  destin: FormControl = new FormControl();
+
+  journeyDate: Date = new Date();
+
+  filteredOriginOptions: Observable<string[]>;
+  filteredDestinOptions: Observable<string[]>;
+
+  modify: boolean = false;
+
   accomodationAvailabilityFetched: boolean;
   accomodationAvailabilityForm: FormGroup;
 
@@ -17,24 +33,24 @@ export class TrainsForADestinationComponent implements OnInit {
   inputTrainName: FormControl;
 
   fetchedAccomodationAvailability: any = [
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: false, mon: true, tue: false, wed: true, thu: false, fri: false, sat: true}, classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: false, thu: true, fri: false, sat: true}, classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: false, thu: false, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: true, thu: false, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: true, thu: true, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: true, wed: true, thu: true, fri: true, sat: true}, classes: ''},
     {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: false, thu: true, fri: false, sat: false}, classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: true, thu: true, fri: false, sat: true}, classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: true, thu: false, fri: false, sat: false}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: true, wed: true, thu: true, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: true, wed: true, thu: false, fri: false, sat: false}, classes: ''},
     {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: true, thu: true, fri: false, sat: false}, classes: ''},
   ];
 
   todayDate: Date = new Date();
-  stnList:  any = [
-    {stnCode: 'NDLS', stnName: 'New Delhi'},
-    {stnCode: 'CNB', stnName: 'Kanpur Central'},
-    {stnCode: 'ALD', stnName: 'Allahabad Jn'},
-    {stnCode: 'MUV', stnName: 'Manduadih'},
-  ];
+  // stnList:  any = [
+  //   {stnCode: 'NDLS', stnName: 'New Delhi'},
+  //   {stnCode: 'CNB', stnName: 'Kanpur Central'},
+  //   {stnCode: 'ALD', stnName: 'Allahabad Jn'},
+  //   {stnCode: 'MUV', stnName: 'Manduadih'},
+  // ];
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(private commonService: CommonService, private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.inputTrainNo = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
     this.inputTrainName = new FormControl({value: '', disabled: true}, [Validators.required]);
     this.accomodationAvailabilityForm =  this.fb.group({
@@ -44,7 +60,30 @@ export class TrainsForADestinationComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.commonService.getStationNameList()
+    .subscribe((val: Array<string>) => {
+      this.stnList = val;
+      this.filteredOriginOptions = this.origin.valueChanges
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+      this.filteredDestinOptions = this.destin.valueChanges
+      .pipe(
+        startWith(''),
+        map(val => this.filter(val))
+      );
+    });
   }
+
+  filter(val: string): string[] {
+    if (val.length>1)
+      return this.stnList.filter(option =>
+        option.toLowerCase().indexOf(val.toLowerCase()) === 0);
+    else
+      return [];
+  }
+
 
   getInputTrainNoErrorMessage() {
     return this.inputTrainNo.hasError('required') ? 'You must enter a value' : 'Enter a valid Train No.';
