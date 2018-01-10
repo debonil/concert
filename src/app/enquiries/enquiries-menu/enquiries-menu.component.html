@@ -5,7 +5,7 @@
   <div class="row card-body p-2">
     <div class="col-xl-4 col-lg-6 col-12 my-1 mx-0" *ngFor="let enq of enquiriesList; let i = index;">
       <a [routerLink]="['/enquiries/' + enq.path]" class="card py-2 px-1 bg-light text-secondary text-sm cursor-pointer">
-        <span class="text-dark font-weight-bold"><span class="text-secondary px-1">{{i + 1 | number: '2.0-0'}}.</span> {{enq.name}}</span>
+        <span class="text-dark"><span class="text-secondary px-1 font-weight-bold">{{i + 1 | number: '2.0-0'}}.</span> {{enq.name}}</span>
       </a>
     </div>
   </div>
