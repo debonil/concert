@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
 
   dialogRef: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
   }

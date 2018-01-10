@@ -1,5 +1,4 @@
-<div [className]="theme"
-  >
+<div [className]="theme">
   <app-header [themeIn]="theme" (themeOut)="changeTheme($event)"></app-header>
   <div class="my-2" style="min-height:calc(100vh - 7.0rem)">
     <router-outlet></router-outlet>
