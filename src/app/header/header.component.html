@@ -1,7 +1,7 @@
-<!-- <div class="row mx-1">
+<!-- <div class="container-fluid row">
   <div class="col-2 mr-auto">
     <a class="navbar-brand" href="#">
-      <img src="../assets/images/logos/logo_rly_blue.png" width="30" height="30" alt="">
+      <img src="../assets/images/logos/logo_rly.png" width="30" height="30" alt="">
     </a>
   </div>
   <div>
@@ -10,36 +10,40 @@
     </a>
   </div>
 </div> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mat-elevation-z2">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top mat-elevation-z2 py-0">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand text-light font-weight-bold" href="#">CONCERT</a>
+
+  <!-- <a class="navbar-brand" href="#">
+    <img src="../assets/images/logos/logo_rly.png" width="30" height="30" alt="">
+  </a> -->
+  <a class="navbar-brand text-light font-weight-bold py-0" href="#">CONCERT</a>
   <!-- <a class="navbar-brand text-secondary" href="#">CONCERT</a> -->
 
   <!-- <a class="navbar-brand" href="#">
     <img src="../assets/images/logos/cris_logo.jpeg" width="30" height="30" alt="">
   </a> -->
   <!-- <a class="navbar-brand" href="#">
-    <img src="../assets/images/logos/logo_rly_blue.png" width="30" height="30" alt="">
+    <img src="../assets/images/logos/logo_rly.png" width="30" height="30" alt="">
   </a> -->
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
+  <div class="collapse navbar-collapse py-0" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mx-auto mt-2 mt-lg-0 py-0">
+      <li class="nav-item active py-0">
         <a [routerLink]="['']" class="nav-link mr-xl-2 bg-dark text-light">Home</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item py-0">
         <a [routerLink]="['reservation']" class="nav-link mr-xl-2 bg-dark text-light" href="#">Quick Book</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item py-0">
         <a [routerLink]="['cancellation']" class="nav-link mr-xl-2 bg-dark text-light" href="#">Cancellation</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item py-0">
         <a [routerLink]="['modification']" class="nav-link mr-xl-2 bg-dark text-light" href="#">Modification</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item py-0">
         <a [routerLink]="['/enquiries']" class="nav-link mr-xl-2 bg-dark text-light">Enquiries</a>
       </li>
       <li class="nav-item dropdown">
@@ -77,8 +81,8 @@
         </div>
       </li>
     </ul> -->
-    <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item dropdown">
+    <ul class="navbar-nav mt-2 mt-lg-0 py-0">
+      <li class="nav-item dropdown py-0">
         <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">format_color_fill</i>
