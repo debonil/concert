@@ -9,6 +9,7 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./trains-for-a-destination.component.scss']
 })
 export class TrainsForADestinationComponent implements OnInit {
+  departsOn: string;
   accomodationAvailabilityFetched: boolean;
   accomodationAvailabilityForm: FormGroup;
 
@@ -16,13 +17,13 @@ export class TrainsForADestinationComponent implements OnInit {
   inputTrainName: FormControl;
 
   fetchedAccomodationAvailability: any = [
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
-    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: '', classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: false, mon: true, tue: false, wed: true, thu: false, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: false, thu: true, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: false, thu: false, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: false, thu: true, fri: false, sat: false}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: true, thu: true, fri: false, sat: true}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: true, tue: false, wed: true, thu: false, fri: false, sat: false}, classes: ''},
+    {train_no: '12560', train_name: 'ANVT BUI SF EXP', src: 'NDLS', dep: '09:25', dest: 'BUI', arr: '00:30', days_running: {sun: true, mon: false, tue: false, wed: true, thu: true, fri: false, sat: false}, classes: ''},
   ];
 
   todayDate: Date = new Date();

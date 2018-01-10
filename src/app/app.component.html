@@ -1,9 +1,5 @@
-<div [class.theme-blue-grey]="theme ==='theme-blue-grey'"
-  [class.theme-indigo]="theme ==='theme-indigo'"
-  [class.theme-teal]="theme ==='theme-teal'"
-  [class.theme-blue-orange]="theme ==='theme-blue-orange'"
-  [class.theme-blue]="theme ==='theme-blue'"
-  [class.theme-pink]="theme ==='theme-pink'">
+<div [className]="theme"
+  >
   <app-header [themeIn]="theme" (themeOut)="changeTheme($event)"></app-header>
   <div class="my-2" style="min-height:calc(100vh - 8.0rem)">
     <router-outlet></router-outlet>

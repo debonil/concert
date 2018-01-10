@@ -46,6 +46,7 @@
           <td scope="col">Departure</td>
           <td scope="col">Destination</td>
           <td scope="col">Arrival</td>
+          <td scope="col">Days Running</td>
         </tr>
       </thead>
       <tbody class="text-dark">
@@ -57,6 +58,15 @@
           <td>{{avl.dep}}</td>
           <td>{{avl.dest}}</td>
           <td>{{avl.arr}}</td>
+          <td>
+            <span [ngClass]="{'text-success': (avl.days_running.sun), 'text-danger': (!avl.days_running.sun)}">S</span>
+            <span [ngClass]="{'text-success': (avl.days_running.mon), 'text-danger': (!avl.days_running.mon)}">M</span>
+            <span [ngClass]="{'text-success': (avl.days_running.tue), 'text-danger': (!avl.days_running.tue)}">T</span>
+            <span [ngClass]="{'text-success': (avl.days_running.wed), 'text-danger': (!avl.days_running.wed)}">W</span>
+            <span [ngClass]="{'text-success': (avl.days_running.thu), 'text-danger': (!avl.days_running.thu)}">T</span>
+            <span [ngClass]="{'text-success': (avl.days_running.fri), 'text-danger': (!avl.days_running.fri)}">F</span>
+            <span [ngClass]="{'text-success': (avl.days_running.sat), 'text-danger': (!avl.days_running.sat)}">S</span>
+          </td>
         </tr>
       </tbody>
     </table>
