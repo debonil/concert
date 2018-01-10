@@ -56,7 +56,7 @@ $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // theme-blue-grey : (blue-grey)
 $theme-primary: mat-palette($mat-blue-grey);
-$theme-accent: mat-palette($mat-blue-grey);
+$theme-accent: mat-palette($mat-teal);
 $theme-warn: mat-palette($mat-red);
 $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .theme-blue-grey {
@@ -94,7 +94,7 @@ $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   .border-dark {
     border-color: mat-color($theme-primary, 700) !important;
-  }  
+  }
 }
 
 // theme-indigo : (indigo)
