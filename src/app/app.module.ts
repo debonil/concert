@@ -13,13 +13,19 @@ import { EnquiriesModule } from './enquiries/enquiries.module';
 import { ServicesModule } from './services/services.module';
 import { DtcTxnComponent } from './dtc-txn/dtc-txn.component';
 import { MyMaterialComponentsModule } from './my-material-components/my-material-components.module';
+import { ReservationComponent } from './reservation/reservation.component';
+import { CancellationComponent } from './cancellation/cancellation.component';
+import { ModificationComponent } from './modification/modification.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent, ThemeDialogComponent,
     FooterComponent,
-    DtcTxnComponent
+    DtcTxnComponent,
+    ReservationComponent,
+    CancellationComponent,
+    ModificationComponent
   ],
   entryComponents: [ThemeDialogComponent],
   imports: [

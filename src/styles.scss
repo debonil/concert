@@ -31,7 +31,7 @@ div:focus {
   outline-color: theme-color("primary") !important;
 }
 a:hover {
-  text-decoration: none;  
+  text-decoration: none;
 }
 /* ------- onFocus Outline CSS ends -----------  */
 
@@ -81,3 +81,18 @@ html {
   cursor: pointer;
 }
 /* ----------------pointer CSS ends--------------------- */
+
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0px 5px;
+  }
+
+  .nav-link {
+    padding: 5px;
+  }
+
+  .nav-item {
+    padding: 0px;
+  }
+}
