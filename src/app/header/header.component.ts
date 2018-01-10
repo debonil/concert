@@ -17,6 +17,9 @@ export class HeaderComponent implements OnInit {
   constructor(public router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
+    // this.router.events.subscribe((e: any)=>{
+    //   console.log(`router: ${e}`);
+    // })
   }
 
   openDialog(): void {
