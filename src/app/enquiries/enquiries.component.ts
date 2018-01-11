@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-enquiries',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnquiriesComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('focusSetter') focusSetter: any;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    this.router.events
+    .subscribe((event: any) => {
+      console.log(`event: ${(event)}`);
+      if (event instanceof NavigationEnd) {
+        this.focusSetter.nativeElement.focus();
+      }
+    })
   }
 
 }
