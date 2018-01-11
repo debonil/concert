@@ -3,7 +3,7 @@
 
 // theme-default : (grey)
 $theme-primary: mat-palette($mat-grey);
-$theme-accent: mat-palette($mat-teal);
+$theme-accent: mat-palette($mat-orange, 400);
 $theme-warn: mat-palette($mat-red);
 $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 @include angular-material-theme($theme-grey);
@@ -11,7 +11,7 @@ $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   color: mat-color($theme-primary, 500) !important;
 }
 .text-secondary {
-  color: mat-color($theme-accent, A700) !important;
+  color: mat-color($theme-accent, 400) !important;
 }
 .text-light {
   color: mat-color($theme-primary, 50) !important;
@@ -23,7 +23,7 @@ $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   background-color: mat-color($theme-primary, 500) !important;
 }
 .bg-secondary {
-  background-color: mat-color($theme-accent, A700) !important;
+  background-color: mat-color($theme-accent, 400) !important;
 }
 .bg-secondary-light {
   background-color: mat-color($theme-accent, 50) !important;
@@ -38,18 +38,18 @@ $theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   border-color: mat-color($theme-primary, 500) !important;
 }
 .border-secondary {
-  border-color: mat-color($theme-accent, A700) !important;
+  border-color: mat-color($theme-accent, 400) !important;
 }
 .border-dark {
   border-color: mat-color($theme-primary, 700) !important;
 }
 div:focus {
   outline:none !important;
-  border-color: mat-color($theme-accent, A700) !important;
-  box-shadow:0 0 2px mat-color($theme-accent, A700) !important;
+  border-color: mat-color($theme-accent, 400) !important;
+  box-shadow:0 0 2px mat-color($theme-accent, 400) !important;
 }
 :focus {
-  outline-color: mat-color($theme-accent, A700) !important;
+  outline-color: mat-color($theme-accent, 400) !important;
 }
 
 
@@ -104,7 +104,7 @@ $theme-blue-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   }
   :focus {
     outline-color: mat-color($theme-accent, A700) !important;
-  }  
+  }
 }
 
 // theme-teal : (teal)
