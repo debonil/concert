@@ -13,8 +13,8 @@ import { EnquiriesModule } from './enquiries/enquiries.module';
 import { ServicesModule } from './services/services.module';
 import { DtcTxnComponent } from './dtc-txn/dtc-txn.component';
 import { MyMaterialComponentsModule } from './my-material-components/my-material-components.module';
-import { ModificationComponent } from './modification/modification.component';
 import { CancellationModule } from './cancellation/cancellation.module';
+import { ModificationModule } from './modification/modification.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,6 @@ import { CancellationModule } from './cancellation/cancellation.module';
     HeaderComponent, ThemeDialogComponent,
     FooterComponent,
     DtcTxnComponent,
-    ModificationComponent
   ],
   entryComponents: [ThemeDialogComponent],
   imports: [
@@ -34,7 +33,8 @@ import { CancellationModule } from './cancellation/cancellation.module';
     MyMaterialComponentsModule,
     JourneyplannerModule,
     EnquiriesModule,
-    CancellationModule
+    CancellationModule,
+    ModificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
