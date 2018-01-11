@@ -55,7 +55,7 @@ const routes: Routes = [
       { path: 'cur_bkg_availability_remote_wise', component: CurBkgAvailabilityRemoteWiseComponent },
     ]
   },
-  { path: 'dtcTxn', component: DtcTxnComponent},
+  { path: 'dtc_txn', component: DtcTxnComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
