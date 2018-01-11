@@ -8,18 +8,18 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class EnquiriesComponent implements OnInit {
 
-  @ViewChild('focusSetter') focusSetter: any;
+  // @ViewChild('focusSetter') focusSetter: any;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.router.events
-    .subscribe((event: any) => {
-      console.log(`event: ${(event)}`);
-      if (event instanceof NavigationEnd) {
-        this.focusSetter.nativeElement.focus();
-      }
-    })
+    // this.router.events
+    // .subscribe((event: any) => {
+    //   console.log(`event: ${(event)}`);
+    //   if (event instanceof NavigationEnd) {
+    //     this.focusSetter.nativeElement.focus();
+    //   }
+    // });
   }
 
 }

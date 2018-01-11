@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import * as appconfig from '../environments/appconfig';
 
 @Component({
@@ -7,11 +7,23 @@ import * as appconfig from '../environments/appconfig';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title: string = 'CONCERT';
   theme: string = 'theme-blue-grey';
 
+  @ViewChild('focusSetter') focusSetter: any;
+
   constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+    this.router.events
+    .subscribe((event: any) => {
+      console.log(`event: ${(event)}`);
+      if (event instanceof NavigationEnd) {
+        this.focusSetter.nativeElement.focus();
+      }
+    });
   }
 
   @HostListener('window:keydown', ['$event'])
