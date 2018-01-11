@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events
     .subscribe((event: any) => {
-      console.log(`event: ${(event)}`);
       if (event instanceof NavigationEnd) {
+        console.log(`event: ${(event)}`);
         this.focusSetter.nativeElement.focus();
       }
     });

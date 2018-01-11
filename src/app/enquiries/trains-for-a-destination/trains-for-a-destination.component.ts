@@ -79,7 +79,7 @@ export class TrainsForADestinationComponent implements OnInit {
   filter(val: string): string[] {
     if (val.length>1)
       return this.stnList.filter(option =>
-        option.toLowerCase().indexOf(val.toLowerCase()) === 0);
+        option.toLowerCase().indexOf(val.toLowerCase()) >= 0);
     else
       return [];
   }
