@@ -15,11 +15,11 @@
           <mat-error *ngIf="inputTrainNo.invalid">{{getInputTrainNoErrorMessage()}}</mat-error>
         </mat-form-field>
         <mat-form-field class="col-md-3 col-sm-6 col-12">
-          <input formControlName="randomWindowNo" matInput placeholder="Random-Window No." required minlength="4" maxlength="7" (keypress)="onlyNumericInput($event)"
+          <input formControlName="randomWindowNo" matInput placeholder="Random-Window No." required minlength="1" maxlength="10" (keypress)="onlyNumericInput($event)"
             >
           <!-- <mat-hint align="start">Enter Train no.</mat-hint> -->
           <!-- <mat-hint align="end">or Enter PNR no.</mat-hint> -->
-          <!-- <mat-error *ngIf="randomWindowNo.invalid">{{getRandomWindowNoErrorMessage()}}</mat-error> -->
+          <mat-error *ngIf="randomWindowNo.invalid">{{getRandomWindowNoErrorMessage()}}</mat-error>
         </mat-form-field>
         <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
             <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Submit</button>

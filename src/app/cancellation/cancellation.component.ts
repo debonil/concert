@@ -33,6 +33,7 @@ export class CancellationComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.inputTrainNo = new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]);
+    this.randomWindowNo = new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(10)]);
     this.accomodationAvailabilityForm =  this.fb.group({
       inputTrainNo: this.inputTrainNo,
       randomWindowNo: this.randomWindowNo,
