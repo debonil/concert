@@ -65,9 +65,9 @@
           <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
         </mat-form-field>
         <mat-form-field class="col-md-3 col-sm-6 col-12 mx-0">
-          <input matInput [matDatepicker]="picker" placeholder="Journey date" required>
+          <input matInput [matDatepicker]="picker" disabled placeholder="Journey date" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker startView="month" [startAt]="todayDate"></mat-datepicker>
+          <mat-datepicker #picker startView="month" [startAt]="todayDate" disabled="false"></mat-datepicker>
         </mat-form-field>
         <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
           <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Fetch Availability</button>

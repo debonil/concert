@@ -8,7 +8,7 @@
     <div class="card-body pt-2 pb-0">
       <form class="row" (submit)="findTrains.emit();modify=true" >
         <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
-          <input type="text" placeholder="Origin" aria-label="Number" matInput [formControl]="origin" [matAutocomplete]="autoOrigin">
+          <input type="text" placeholder="Origin" aria-label="Number" matInput [formControl]="origin" [matAutocomplete]="autoOrigin" required>
           <mat-autocomplete #autoOrigin="matAutocomplete">
             <mat-option *ngFor="let option of filteredOriginOptions | async" [value]="option">
               {{ option }}
@@ -16,7 +16,7 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
-          <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="destin" [matAutocomplete]="autoDestin">
+          <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="destin" [matAutocomplete]="autoDestin" required>
           <mat-autocomplete #autoDestin="matAutocomplete">
             <mat-option *ngFor="let option of filteredDestinOptions | async" [value]="option">
               {{ option }}
@@ -24,15 +24,15 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
-          <input matInput [matDatepicker]="picker" placeholder="Journey date">
+          <input matInput [matDatepicker]="picker" disabled placeholder="Journey date" required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker startView="month" [startAt]="journeyDate"></mat-datepicker>
+          <mat-datepicker #picker startView="month" [startAt]="journeyDate" disabled="false"></mat-datepicker>
         </mat-form-field>
         <!-- <button *ngIf="!modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Find Trains</button>
         <button *ngIf="modify" mat-raised-button class="col-lg-3 col-md-6 col-12 h-75 mx-0 my-2 text-primary" type="submit">Modify Search</button> -->
         <div class="col-lg-3 col-md-6 col-12 px-3 mb-3 my-2">
           <button *ngIf="!modify" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Find Trains</button>
-          <button *ngIf="modify" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Modify Search</button>    
+          <button *ngIf="modify" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Modify Search</button>
         </div>
       </form>
     </div>
