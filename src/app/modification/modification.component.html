@@ -86,8 +86,8 @@
               <td>{{avl.bkg_status}}</td>
               <td>{{avl.cur_status}}</td>
               <td>
-                <mat-form-field>
-                  <mat-select placeholder="Berth Preference" required multiple>
+                <mat-form-field class="m-0 p-0">
+                  <mat-select placeholder="Berth Preference" required>
                     <!-- <mat-option value="">Select Class</mat-option> -->
                     <mat-option value="1A">Lower Berth</mat-option>
                     <mat-option value="1A">Middle Berth</mat-option>
@@ -97,7 +97,7 @@
                   </mat-select>
                   <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
                     <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
-                </mat-form-field>                
+                </mat-form-field>
               </td>
               <td><mat-checkbox></mat-checkbox></td>
             </tr>
