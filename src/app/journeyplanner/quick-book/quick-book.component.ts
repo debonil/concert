@@ -4,11 +4,11 @@ import { FormGroup } from '@angular/forms/src/model';
 import { MatSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-reservation',
-  templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.scss']
+  selector: 'app-quick-book',
+  templateUrl: './quick-book.component.html',
+  styleUrls: ['./quick-book.component.scss']
 })
-export class ReservationComponent implements OnInit {
+export class QuickBookComponent implements OnInit {
   accomodationAvailabilityFetched: boolean;
   accomodationAvailabilityForm: FormGroup;
 
@@ -64,7 +64,7 @@ export class ReservationComponent implements OnInit {
   }
 
   inputTrainNoChangeFn(e: KeyboardEvent) {
-    // console.log('e: ' + e.key);
+    console.log('e: ' + e.key);
 
     if (this.inputTrainNo.value.length === 5) {
       this.inputTrainName.setValue('SHIV GANGA EXP');

@@ -22,14 +22,14 @@ import { ChartingStatusComponent } from './enquiries/charting-status/charting-st
 import { BerthTypeAvailabilityComponent } from './enquiries/berth-type-availability/berth-type-availability.component';
 import { CurrentBookingAvailabilityComponent } from './enquiries/current-booking-availability/current-booking-availability.component';
 import { CurBkgAvailabilityRemoteWiseComponent } from './enquiries/cur-bkg-availability-remote-wise/cur-bkg-availability-remote-wise.component';
-import { ReservationComponent } from './reservation/reservation.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { ModificationComponent } from './modification/modification.component';
+import { QuickBookComponent } from './journeyplanner/quick-book/quick-book.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'home', component: JpComponent},
-  { path: 'reservation', component: ReservationComponent},
+  { path: 'quick_book', component: QuickBookComponent},
   { path: 'cancellation', component: CancellationComponent},
   { path: 'modification', component: ModificationComponent},
   { path: 'enquiries', component: EnquiriesComponent,
