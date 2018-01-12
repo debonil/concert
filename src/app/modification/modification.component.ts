@@ -16,11 +16,11 @@ export class ModificationComponent implements OnInit {
   randomWindowNo: FormControl;
 
   fetchedAccomodationAvailability: any = [
-    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75'},
-    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75'},
-    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75'},
-    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75'},
-    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75'},
+    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75', bp: 'LB'},
+    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75', bp: 'LB'},
+    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75', bp: 'LB'},
+    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75', bp: 'LB'},
+    {pnr: '2717796715', name: 'Ankit Pandey', sex: 'Male', age: '23', bkg_status: 'S1  , 75/GN', cur_status: 'S1  , 75', bp: 'LB'},
   ];
 
   todayDate: Date = new Date();
