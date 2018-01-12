@@ -16,13 +16,14 @@
         </div>
       </div>
       <div class="col-lg-2 col-md-4 col-12 pull-right mt-2 mt-md-0">
-        <button type="button" mat-raised-button class="w-100" color="primary" (click)="drawer.toggle()">
+        <button type="button" mat-raised-button class="text-primary w-100 px-1 my-2" (click)="drawer.toggle()">
           Refine Results
         </button>
       </div>
     </div>
   </div>
-  <div class="container bg-light rounded py-2 px-0 px-lg-2">
+  <!-- <div class="container bg-light rounded py-2 px-0 px-lg-2"> -->
+  <div class="container py-2 px-0">
     <div class="my-2" *ngFor="let train of trainList; let i = index;">
       <app-train [train]="train" [index]=i [selected]="selected" (trainSelected)="selected=i"></app-train>
     </div>

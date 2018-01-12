@@ -16,6 +16,7 @@ export class TrainComponent implements OnInit {
 
   numOfPsgn: string = '';
 
+  panelOpenState: boolean = false;
   constructor() { }
 
   ngOnInit() {

@@ -28,9 +28,9 @@
           <div>
             {{train.duration}}
           </div>
-          <!-- <div class="text-xs text-primary">
-              {{train.fromStnCode}}
-            </div> -->
+          <div class="text-xs text-primary">
+            Avg. Delay: 30m
+          </div>
         </div>
       </div>
       <div class="col-lg-2 col-12 px-4 py-2 py-lg-0">
@@ -38,4 +38,38 @@
       </div>
     </div>
   </div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle="false">
+      <mat-expansion-panel-header>
+
+          <div class="col-4">
+              <div>
+                {{train.departureTime}}
+              </div>
+              <div class="text-xs text-primary">
+                {{train.fromStnCode}}
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                {{train.arrivalTime}}
+              </div>
+              <div class="text-xs text-primary">
+                {{train.toStnCode}}
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                {{train.duration}}
+              </div>
+              <div class="text-xs text-primary">
+                Avg. Delay: 30m
+              </div>
+            </div>
+      </mat-expansion-panel-header>
+      <div>
+
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
