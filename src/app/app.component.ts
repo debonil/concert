@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.router.events
     .subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        console.log(`event: ${(event)}`);
+        console.log(`navigationEnd: ${(event.url)}`);
         this.focusSetter.nativeElement.focus();
       }
     });
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:keydown', ['$event'])
   doSomething(event) {
-    console.log(`event: ${JSON.stringify(event)}`+event.keyCode);
+    // console.log(`event: ${JSON.stringify(event)}`+event.keyCode);
     if (event.keyCode === 112) {
       this.router.navigate(['/home']);
       return false;
@@ -50,6 +50,7 @@ export class AppComponent implements OnInit {
     } else if (this.router.url === '/enquiries' && (event.keyCode >= 65 && (event.keyCode <= 90))) {
       console.log('/enquiries/' + appconfig.enquiriesList[event.keyCode-65].path);
       this.router.navigate(['/enquiries/' + appconfig.enquiriesList[event.keyCode-65].path]);
+      return false;
     }
   }
 
