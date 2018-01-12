@@ -3,9 +3,9 @@
     <app-filter-train-list></app-filter-train-list>
   </mat-drawer>
 
-  <div class="container">
+  <div class="container my-2">
     <div class="row bg-light my-3 py-3 rounded">
-      <div class="col-md-6 col-12 mx-2 text-secondary font-weight-bold">
+      <div class="col-lg-10 col-md-8 col-12 text-secondary font-weight-bold">
         <div>
           NEW DELHI (NDLS)
           <i class="material-icons vertical-align-middle">trending_flat</i>
@@ -15,37 +15,15 @@
           {{trainList.length}} trains found.
         </div>
       </div>
-      <div class="col-md-2 col-12 ml-auto">
-        <button type="button" mat-raised-button color="primary" (click)="drawer.toggle()">
+      <div class="col-lg-2 col-md-4 col-12 pull-right mt-2 mt-md-0">
+        <button type="button" mat-raised-button class="w-100" color="primary" (click)="drawer.toggle()">
           Refine Results
         </button>
       </div>
     </div>
   </div>
-  <div class="container bg-light pb-2 mb-2 rounded">
-    <div class="row text-primary my-2 py-2">
-      <div class="col-4 text-lg">
-        <span class="">
-                  Train Name &amp; No.
-        </span>
-      </div>
-      <div class="row col-6 text-center">
-        <div class="col-4">
-          Departs
-        </div>
-        <div class="col-4">
-          Arrives
-        </div>
-        <div class="col-4">
-          Duration
-        </div>
-      </div>
-      <div class="col-2 pull-right vertical-align-middle">
-        <span class="">Availability &amp; Fare</span>
-      </div>
-    </div>
-
-    <div class="container" *ngFor="let train of trainList; let i = index;">
+  <div class="container bg-light rounded py-2">
+    <div class="my-2" *ngFor="let train of trainList; let i = index;">
       <app-train [train]="train" [index]=i [selected]="selected" (trainSelected)="selected=i"></app-train>
     </div>
   </div>

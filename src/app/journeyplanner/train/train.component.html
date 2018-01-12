@@ -1,47 +1,41 @@
-<!-- <div tabindex="0" class="train_div card mb-2" [class.mat-elevation-z0]="index!==selected" [class.mat-elevation-z10]="index===selected" -->
-  <div tabindex="0" class="train_div card mb-2"
-  (focus)="trainSelected.emit(index)">
-  <div class="card-body text-secondary py-0">
-    <ul class="col-sm-12 list-group list-group-flush py-0">
-      <li class="list-group-item py-2">
-        <div class="row">
-          <div class="col-4 text-lg">
-            <div class="text-primary">
-              <span class="material-icons vertical-align-middle">train</span>
-              <span>{{train.trainName}}({{train.trainNumber}})</span>
-            </div>
+<div tabindex="0" class="card" (click)="trainSelected.emit(index)" (focus)="trainSelected.emit(index)">
+  <div class="card-body text-secondary pr-0 py-2">
+    <div class="row">
+      <div class="col-lg-4 col-12 text-md">
+        <div class="text-primary">
+          <span class="material-icons vertical-align-middle">train</span>
+          <span>{{train.trainName}}({{train.trainNumber}})</span>
+        </div>
+      </div>
+      <div class="row col-lg-6 col-12 text-center text-md">
+        <div class="col-4">
+          <div>
+            {{train.departureTime}}
           </div>
-          <div class="row col-6 text-center">
-            <div class="col-4">
-              <div class="text-xl">
-                {{train.departureTime}}
-              </div>
-              <div class="text-sm">
-                {{train.fromStnCode}}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="text-xl">
-                {{train.arrivalTime}}
-              </div>
-              <div class="text-sm">
-                {{train.toStnCode}}
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="text-xl">
-                {{train.duration}}
-              </div>
-              <!-- <div class="text-sm">
-                {{train.fromStnCode}}
-              </div> -->
-            </div>
-          </div>
-          <div class="col-2 pull-right vertical-align-middle">
-            <button mat-raised-button class="col-12 mx-0 float-right text-primary" type="submit">Check Availability</button>
+          <div class="text-xs text-primary">
+            {{train.fromStnCode}}
           </div>
         </div>
-      </li>
-    </ul>
+        <div class="col-4">
+          <div>
+            {{train.arrivalTime}}
+          </div>
+          <div class="text-xs text-primary">
+            {{train.toStnCode}}
+          </div>
+        </div>
+        <div class="col-4">
+          <div>
+            {{train.duration}}
+          </div>
+          <!-- <div class="text-xs text-primary">
+              {{train.fromStnCode}}
+            </div> -->
+        </div>
+      </div>
+      <div class="col-lg-2 col-12">
+        <button mat-raised-button class="text-primary w-100 px-1"  type="submit">Check Availability</button>
+      </div>
+    </div>
   </div>
 </div>

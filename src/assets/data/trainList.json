@@ -6,7 +6,7 @@
     "departureTime":"00:10",
     "toStnCode": "MKP",
     "arrivalTime":"06:15",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["--","--","W","--","--","S","--"],
     "avlClasses": ["1A","2A","3A"]
   },
@@ -17,7 +17,7 @@
     "departureTime":"04:30",
     "toStnCode": "JHS",
     "arrivalTime":"13:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -28,7 +28,7 @@
     "departureTime":"05:15",
     "toStnCode": "JHS",
     "arrivalTime":"12:25",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -39,7 +39,7 @@
     "departureTime":"06:25",
     "toStnCode": "JHS",
     "arrivalTime":"12:05",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","--","T","--","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -50,7 +50,7 @@
     "departureTime":"07:00",
     "toStnCode": "JHS",
     "arrivalTime":"14:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","--","--","--","--","S","--"],
     "avlClasses": ["CC","2S"]
   },
@@ -61,7 +61,7 @@
     "departureTime":"00:10",
     "toStnCode": "MKP",
     "arrivalTime":"06:15",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["--","--","W","--","--","S","--"],
     "avlClasses": ["1A","2A","3A"]
   },
@@ -72,7 +72,7 @@
     "departureTime":"04:30",
     "toStnCode": "JHS",
     "arrivalTime":"13:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -83,7 +83,7 @@
     "departureTime":"05:15",
     "toStnCode": "JHS",
     "arrivalTime":"12:25",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -94,7 +94,7 @@
     "departureTime":"06:25",
     "toStnCode": "JHS",
     "arrivalTime":"12:05",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","--","T","--","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -105,7 +105,7 @@
     "departureTime":"07:00",
     "toStnCode": "JHS",
     "arrivalTime":"14:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","--","--","--","--","S","--"],
     "avlClasses": ["CC","2S"]
   },
@@ -116,7 +116,7 @@
     "departureTime":"00:10",
     "toStnCode": "MKP",
     "arrivalTime":"06:15",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["--","--","W","--","--","S","--"],
     "avlClasses": ["1A","2A","3A"]
   },
@@ -127,7 +127,7 @@
     "departureTime":"04:30",
     "toStnCode": "JHS",
     "arrivalTime":"13:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -138,7 +138,7 @@
     "departureTime":"05:15",
     "toStnCode": "JHS",
     "arrivalTime":"12:25",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","W","T","F","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -149,7 +149,7 @@
     "departureTime":"06:25",
     "toStnCode": "JHS",
     "arrivalTime":"12:05",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","T","--","T","--","S","S"],
     "avlClasses": ["1A","2A","3A","SL"]
   },
@@ -160,7 +160,7 @@
     "departureTime":"07:00",
     "toStnCode": "JHS",
     "arrivalTime":"14:10",
-    "duration" : "14.35",
+    "duration" : "14h 35m",
 		"days":["M","--","--","--","--","S","--"],
     "avlClasses": ["CC","2S"]
   }

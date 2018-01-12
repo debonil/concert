@@ -37,7 +37,31 @@ a:hover {
 
 /* ------------- font size CSS begins ---------------- */
 html {
-  font-size: 0.99rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 1500px) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 0.6rem;
+  }
 }
 
 .text-xxxl {
