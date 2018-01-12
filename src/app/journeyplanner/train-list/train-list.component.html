@@ -3,8 +3,8 @@
     <app-filter-train-list></app-filter-train-list>
   </mat-drawer>
 
-  <div class="container my-2">
-    <div class="row bg-light my-3 py-3 rounded">
+  <div class="container bg-light my-3 py-2 rounded">
+    <div class="row">
       <div class="col-lg-10 col-md-8 col-12 text-secondary font-weight-bold">
         <div>
           NEW DELHI (NDLS)
@@ -22,7 +22,7 @@
       </div>
     </div>
   </div>
-  <div class="container bg-light rounded py-2">
+  <div class="container bg-light rounded py-2 px-0 px-lg-2">
     <div class="my-2" *ngFor="let train of trainList; let i = index;">
       <app-train [train]="train" [index]=i [selected]="selected" (trainSelected)="selected=i"></app-train>
     </div>
