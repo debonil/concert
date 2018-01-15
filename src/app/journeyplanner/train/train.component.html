@@ -1,10 +1,18 @@
 <div tabindex="0" class="card" (click)="trainSelected.emit(index)" (focus)="trainSelected.emit(index)">
   <div class="card-body text-primary px-2 pr-md-0 py-2">
     <div class="row">
-      <div class="col-lg-4 col-12 text-md">
+      <div class="col-lg-4 col-8 text-md">
         <div class="text-primary">
           <span class="material-icons vertical-align-middle">train</span>
           <span>{{train.trainName}}({{train.trainNumber}})</span>
+        </div>
+      </div>
+      <div class="d-lg-none col-4">
+        <div class="text-primary w-100">
+          <button *ngIf="!panelOpenState" mat-button color="primary" class="border rounded bg-light w-100 text-sm px-0" (click)="panelOpenState = true">Check Availability</button>
+          <button *ngIf="panelOpenState" mat-button color="primary" class="border rounded bg-light w-100" (click)="panelOpenState = true">
+            <i class="material-icons">loop</i>
+          </button>
         </div>
       </div>
       <div class="row col-lg-6 col-12 text-center text-md">
@@ -33,89 +41,64 @@
           </div>
         </div>
       </div>
-      <!-- <div class="col-lg-2 col-12 px-4 py-2 py-lg-0">
-        <div class="d-md-none col-md-9 col-12 text-primary text-sm">
-          Runs On: Tue, Thu, Fri & Sun
-        </div>
-      </div> -->
-      <div class="col-lg-2 col-12 px-4 py-2 py-lg-0">
-        <button *ngIf="!panelOpenState" mat-button color="primary" class="border border-primary rounded w-100 bg-light" (click)="panelOpenState = true">Check Availability</button>
-        <button *ngIf="panelOpenState" mat-button class="text-primary w-100 px-1" (click)="panelOpenState = true">
+      <div class="d-none d-lg-block col-lg-2 col-12 px-4 py-2 py-lg-0">
+      <!-- <div class="col-lg-2 col-12 px-4 py-2 py-lg-0"> -->
+        <button *ngIf="!panelOpenState" mat-button color="primary" class="border rounded bg-light mx-auto" (click)="panelOpenState = true">Check Availability</button>
+        <button *ngIf="panelOpenState" mat-button color="primary" class="border rounded bg-light w-100" (click)="panelOpenState = true">
           <i class="material-icons">loop</i>
         </button>
       </div>
     </div>
   </div>
   <mat-accordion>
-    <mat-expansion-panel hideToggle="false" class="mat-elevation-z0" [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
-      <mat-expansion-panel-header class="h-50 px-1 py-1">
-        <!-- <div class="d-none d-md-block col-md-9 col-12 text-primary text-sm"> -->
+    <mat-expansion-panel [disabled]="!panelOpenState" [hideToggle]="!panelOpenState" class="mat-elevation-z0 p-0" [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header class="h-50 px-2 py-1">
         <div class="col-12 text-primary text-sm">
           Runs On: Tue, Thu, Fri & Sun
         </div>
         <div class="col-md-3 col-12 pull-right px-1 text-secondary" style="text-align: right;">
-        <!-- <div class="col-12 pull-right px-1 text-secondary" style="text-align: right;"> -->
-          <!-- Check Availability -->
-          <!-- <button mat-raised-button class="text-primary bg-light w-100 px-0"  type="submit">Check Availability</button> -->
         </div>
-        <!-- <button mat-raised-button class="text-primary bg-light w-100 px-0"  type="submit">Check Availability</button> -->
       </mat-expansion-panel-header>
-      <div class="row text-center mx-0 my-1 text-sm">
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            PQWL226/WL125
-          </div>
-        <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            AVAILABLE 20
-          </div>
-          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            PQWL26/WL25
-          </div>
-          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            PQWL226/WL125
-          </div>
-          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            AVAILABLE 20
-          </div>
-          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-        <div class="card col-md-2 col-4 px-0">
-          <div>
-            {{todayDate | date: 'dd-MM-yyyy'}}
-          </div>
-          <div class="text-xs text-primary">
-            PQWL26/WL25
-          </div>
-          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-        </div>
-      </div>
+      <table class="table table-responsive table-bordered text-center m-0">
+        <thead class="text-dark bg-light">
+          <tr>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            <td style="min-width:150px" scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+          </tr>
+        </thead>
+        <tbody class="text-dark">
+          <tr>
+            <td scope="row" class="text-primary py-1">
+              <div>PQWL26/WL25</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+            <td scope="row" class="text-primary py-1">
+              <div>AVAILABLE 20</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+            <td scope="row" class="text-primary py-1">
+              <div>PQWL26/WL25</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+            <td scope="row" class="text-primary py-1">
+              <div>PQWL26/WL25</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+            <td scope="row" class="text-primary py-1">
+              <div>AVAILABLE 20</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+            <td scope="row" class="text-primary py-1">
+              <div>PQWL26/WL25</div>
+              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

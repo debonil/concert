@@ -131,3 +131,20 @@ html {
   border-width: 6px !important;
 }
 // ---------------- border width CSS ends -------------- //
+
+
+// ----------------- scrollbar style begins -------------//
+::-webkit-scrollbar {
+  width: .4em;
+  height: .4em;
+}
+::-webkit-scrollbar-button {
+  background: #aaa;
+}
+::-webkit-scrollbar-track-piece {
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+// ----------------- scrollbar style ends -------------//
