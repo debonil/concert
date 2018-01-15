@@ -1,5 +1,5 @@
 <div tabindex="0" class="card" (click)="trainSelected.emit(index)" (focus)="trainSelected.emit(index)">
-  <div class="card-body text-secondary px-2 pr-md-0 py-2">
+  <div class="card-body text-primary px-2 pr-md-0 py-2">
     <div class="row">
       <div class="col-lg-4 col-12 text-md">
         <div class="text-primary">
@@ -33,42 +33,88 @@
           </div>
         </div>
       </div>
+      <!-- <div class="col-lg-2 col-12 px-4 py-2 py-lg-0">
+        <div class="d-md-none col-md-9 col-12 text-primary text-sm">
+          Runs On: Tue, Thu, Fri & Sun
+        </div>
+      </div> -->
       <div class="col-lg-2 col-12 px-4 py-2 py-lg-0">
-        <button mat-raised-button class="text-primary w-100 px-1"  type="submit">Check Availability</button>
+        <button *ngIf="!panelOpenState" mat-button color="primary" class="border border-primary rounded w-100 bg-light" (click)="panelOpenState = true">Check Availability</button>
+        <button *ngIf="panelOpenState" mat-button class="text-primary w-100 px-1" (click)="panelOpenState = true">
+          <i class="material-icons">loop</i>
+        </button>
       </div>
     </div>
   </div>
   <mat-accordion>
-    <mat-expansion-panel hideToggle="false">
-      <mat-expansion-panel-header>
-
-          <div class="col-4">
-              <div>
-                {{train.departureTime}}
-              </div>
-              <div class="text-xs text-primary">
-                {{train.fromStnCode}}
-              </div>
-            </div>
-            <div class="col-4">
-              <div>
-                {{train.arrivalTime}}
-              </div>
-              <div class="text-xs text-primary">
-                {{train.toStnCode}}
-              </div>
-            </div>
-            <div class="col-4">
-              <div>
-                {{train.duration}}
-              </div>
-              <div class="text-xs text-primary">
-                Avg. Delay: 30m
-              </div>
-            </div>
+    <mat-expansion-panel hideToggle="false" class="mat-elevation-z0" [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header class="h-50 px-1 py-1">
+        <!-- <div class="d-none d-md-block col-md-9 col-12 text-primary text-sm"> -->
+        <div class="col-12 text-primary text-sm">
+          Runs On: Tue, Thu, Fri & Sun
+        </div>
+        <div class="col-md-3 col-12 pull-right px-1 text-secondary" style="text-align: right;">
+        <!-- <div class="col-12 pull-right px-1 text-secondary" style="text-align: right;"> -->
+          <!-- Check Availability -->
+          <!-- <button mat-raised-button class="text-primary bg-light w-100 px-0"  type="submit">Check Availability</button> -->
+        </div>
+        <!-- <button mat-raised-button class="text-primary bg-light w-100 px-0"  type="submit">Check Availability</button> -->
       </mat-expansion-panel-header>
-      <div>
-
+      <div class="row text-center mx-0 my-1 text-sm">
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            PQWL226/WL125
+          </div>
+        <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            AVAILABLE 20
+          </div>
+          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            PQWL26/WL25
+          </div>
+          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            PQWL226/WL125
+          </div>
+          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            AVAILABLE 20
+          </div>
+          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
+        <div class="card col-md-2 col-4 px-0">
+          <div>
+            {{todayDate | date: 'dd-MM-yyyy'}}
+          </div>
+          <div class="text-xs text-primary">
+            PQWL26/WL25
+          </div>
+          <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+        </div>
       </div>
     </mat-expansion-panel>
   </mat-accordion>
