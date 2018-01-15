@@ -15,6 +15,8 @@ export class QuickBookComponent implements OnInit {
   inputTrainNo: FormControl;
   inputTrainName: FormControl;
 
+  infoMsg: Array<string>;
+
   fetchedAccomodationAvailability: any = [
     {avl_2A: 'AVAILABLE 8', avl_SL: 'AVAILABLE 85'},
     {avl_2A: 'GNWL/AVAILABLE', avl_SL: 'RAC22/RAC 18'},
