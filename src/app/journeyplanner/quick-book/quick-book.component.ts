@@ -15,7 +15,8 @@ export class QuickBookComponent implements OnInit {
   inputTrainNo: FormControl;
   inputTrainName: FormControl;
 
-  infoMsg: Array<string>;
+  helpMsg: Array<string> = [];
+  infoMsg: string = '';
 
   fetchedAccomodationAvailability: any = [
     {avl_2A: 'AVAILABLE 8', avl_SL: 'AVAILABLE 85'},
@@ -85,5 +86,10 @@ export class QuickBookComponent implements OnInit {
         duration: 4000,
       });
     }
+  }
+
+  showHelp() {
+    this.infoMsg = 'Help Message';
+    return false;
   }
 }
