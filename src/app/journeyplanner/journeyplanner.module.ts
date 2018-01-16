@@ -8,6 +8,8 @@ import { FilterTrainListComponent } from './filter-train-list/filter-train-list.
 import { TrainComponent } from './train/train.component';
 import { JpComponent } from './jp/jp.component';
 import { QuickBookComponent } from './quick-book/quick-book.component';
+import { PassengerListComponent } from './passenger-list/passenger-list.component';
+import { PassengerComponent } from './passenger/passenger.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,6 @@ import { QuickBookComponent } from './quick-book/quick-book.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [JpInputComponent, TrainListComponent, FilterTrainListComponent, TrainComponent, JpComponent, QuickBookComponent]
+  declarations: [JpInputComponent, TrainListComponent, FilterTrainListComponent, TrainComponent, JpComponent, QuickBookComponent, PassengerListComponent, PassengerComponent]
 })
 export class JourneyplannerModule { }

@@ -71,7 +71,7 @@
           <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
         </mat-form-field>
         <mat-form-field class="col-md-3 col-sm-6 col-12">
-          <mat-select placeholder="No. of Passengers" required>
+          <mat-select formControlName="noOfPsgn" placeholder="No. of Passengers" required>
             <!-- <mat-option value="">Select Class</mat-option> -->
             <mat-option value="0">None</mat-option>
             <mat-option value="1">1</mat-option>
@@ -124,10 +124,10 @@
           <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
           <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
         </mat-form-field>
-        <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
+        <!-- <div class="col-md-3 col-sm-6 col-12 px-3 mb-3">
           <button *ngIf="!accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" type="submit">Submit</button>
           <button *ngIf="accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" (click)="accomodationAvailabilityFetched=false">Reset</button>
-        </div>
+        </div> -->
       </div>
     </form>
     <div *ngIf="(infoMsg !== '') || (infoMsg.length !== 0)" class="card-footer py-2 bg-secondary-light text-secondary-dark ">
@@ -136,5 +136,11 @@
         <li *ngFor="let msg of infoMsg">{{msg}}</li>
       </ul> -->
     </div>
+  </div>
+  <app-passenger-list *ngIf="noOfPsgn.value>0" [noOfPsgn]="noOfPsgn.value"></app-passenger-list>
+  <div *ngIf="noOfPsgn.value>0" class="col-md-2 col-12 mx-auto">
+    <button type="button" mat-raised-button color="primary" (click)="false">
+      Book Ticket
+    </button>
   </div>
 </div>

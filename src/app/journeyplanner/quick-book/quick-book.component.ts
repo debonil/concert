@@ -14,6 +14,7 @@ export class QuickBookComponent implements OnInit {
 
   inputTrainNo: FormControl;
   inputTrainName: FormControl;
+  noOfPsgn: FormControl;
 
   helpMsg: Array<string> = [];
   infoMsg: string = '';
@@ -47,9 +48,12 @@ export class QuickBookComponent implements OnInit {
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
     this.inputTrainNo = new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]);
     this.inputTrainName = new FormControl({value: '', disabled: true}, [Validators.required]);
+    this.noOfPsgn = new FormControl('', [Validators.required]);
+
     this.accomodationAvailabilityForm =  this.fb.group({
       inputTrainNo: this.inputTrainNo,
-      inputTrainName: this.inputTrainName
+      inputTrainName: this.inputTrainName,
+      noOfPsgn: this.noOfPsgn
     });
   }
 
@@ -86,6 +90,7 @@ export class QuickBookComponent implements OnInit {
         duration: 4000,
       });
     }
+    console.log(this.noOfPsgn.value);
   }
 
   showHelp() {
