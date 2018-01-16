@@ -15,29 +15,35 @@ export class PassengerComponent implements OnInit {
   accomodationAvailabilityFetched: boolean;
   accomodationAvailabilityForm: FormGroup;
 
-  psgnAge: FormControl;
   psgnName: FormControl;
+  psgnGender: FormControl;
+  psgnAge: FormControl;
+  psgnBerthPref: FormControl;
+  psgnFoodPref: FormControl;
 
   todayDate: Date = new Date();
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {
-    this.psgnAge = new FormControl('', [Validators.required, Validators.min(5), Validators.max(120)]);
     this.psgnName = new FormControl('', [Validators.required]);
+    this.psgnGender = new FormControl('', [Validators.required]);
+    this.psgnAge = new FormControl('', [Validators.required, Validators.min(5), Validators.max(120)]);
+    this.psgnBerthPref = new FormControl('', [Validators.required]);
+    this.psgnFoodPref = new FormControl('', [Validators.required]);
 
     this.accomodationAvailabilityForm =  this.fb.group({
+      psgnName: this.psgnName,
+      psgnGender: this.psgnGender,
       psgnAge: this.psgnAge,
-      psgnName: this.psgnName
+      psgnBerthPref: this.psgnBerthPref,
+      psgnFoodPref: this.psgnFoodPref,
     });
   }
 
   ngOnInit() {
   }
 
-  getPsgnAgeErrorMessage() {
-    return this.psgnAge.hasError('required') ? 'You must enter a value.' : 'Enter a valid age.';
-  }
-  getPsgnNameErrorMessage() {
-    return this.psgnAge.hasError('required') ? 'You must enter a value.' : 'Enter a valid age.';
+  getPsgnErrorMessage(fc: FormControl) {
+    return fc.hasError('required') ? 'You must enter a value.' : 'Enter a valid value.';
   }
 
   onlyNumericInput(e:any) {
