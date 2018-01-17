@@ -8,7 +8,8 @@
     <div class="card-body pt-2 pb-0">
       <form class="row" (submit)="findTrains.emit();modify=true" >
         <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
-          <input type="text" placeholder="Origin" aria-label="Number" matInput [formControl]="origin" [matAutocomplete]="autoOrigin" required>
+          <input type="text" placeholder="Origin" aria-label="Number" matInput [formControl]="origin" [matAutocomplete]="autoOrigin" required
+          (blur)="selectOrigin()">
           <mat-autocomplete #autoOrigin="matAutocomplete">
             <mat-option *ngFor="let option of filteredOriginOptions | async" [value]="option">
               {{ option }}
@@ -16,7 +17,8 @@
           </mat-autocomplete>
         </mat-form-field>
         <mat-form-field class="col-lg-3 col-md-6 col-12 mx-0">
-          <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="destin" [matAutocomplete]="autoDestin" required>
+          <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="destin" [matAutocomplete]="autoDestin" required
+          (blur)="selectDestin()">
           <mat-autocomplete #autoDestin="matAutocomplete">
             <mat-option *ngFor="let option of filteredDestinOptions | async" [value]="option">
               {{ option }}
