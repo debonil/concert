@@ -21,8 +21,10 @@ export class CurrentBookingAvailabilityComponent implements OnInit {
 
   journeyDate: Date = new Date();
 
-  filteredOriginOptions: Observable<string[]>;
-  filteredDestinOptions: Observable<string[]>;
+  filteredOriginOptions: Observable<string[]> = null;
+  filteredDestinOptions: Observable<string[]> = null;
+  filteredOriginList: string[] = [];
+  filteredDestinList: string[] = [];
 
   modify: boolean = false;
 
@@ -73,6 +75,18 @@ export class CurrentBookingAvailabilityComponent implements OnInit {
         startWith(''),
         map(val => this.filter(val))
       );
+      this.filteredOriginOptions
+      .subscribe((val: string[]) => {
+        if (val.length > 0) {
+          this.filteredOriginList = val;
+        }
+      });
+      this.filteredDestinOptions
+      .subscribe((val: string[]) => {
+        if (val.length > 0) {
+          this.filteredDestinList = val;
+        }
+      });
     });
   }
 
@@ -114,6 +128,18 @@ export class CurrentBookingAvailabilityComponent implements OnInit {
       this.snackBar.open('Please fill the form appropriately!', '', {
         duration: 4000,
       });
+    }
+  }
+  selectOrigin() {
+    console.log(`this.origin.value: ${this.origin.value}`);
+    if (this.stnList.indexOf(this.origin.value) < 0) {
+      this.origin.setValue((this.filteredOriginList.length > 0)? (this.filteredOriginList[0]) : '');
+    }
+  }
+  selectDestin() {
+    console.log(`this.destin.value: ${this.destin.value}`);
+    if (this.stnList.indexOf(this.destin.value) < 0) {
+      this.destin.setValue((this.filteredDestinList.length > 0)? (this.filteredDestinList[0]) : '');
     }
   }
 }
