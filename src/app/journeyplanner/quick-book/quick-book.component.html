@@ -129,6 +129,54 @@
           <button *ngIf="accomodationAvailabilityFetched" mat-button color="primary" class="border border-primary rounded w-100 bg-light" (click)="accomodationAvailabilityFetched=false">Reset</button>
         </div> -->
       </div>
+      <mat-accordion>
+        <!-- <mat-expansion-panel [disabled]="!panelOpenState" [hideToggle]="!panelOpenState" class="mat-elevation-z0 p-0" [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false"> -->
+        <mat-expansion-panel class="row mat-elevation-z0 p-0">
+          <mat-expansion-panel-header class="col-12 h-50 px-2 py-1">
+            Advanced Route Options
+          </mat-expansion-panel-header>
+          <mat-form-field class="col-md-3 col-sm-6 col-12">
+            <mat-select placeholder="Enroute Point" required (change)="infoMsg = 'MANDUADIH Arrival Time : 07:00 Departure Time : 00:00'">
+              <!-- <mat-option>Select Destination</mat-option> -->
+              <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
+                {{stn.stnName}} ({{stn.stnCode}})
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+            <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-form-field>
+          <mat-form-field class="col-md-3 col-sm-6 col-12">
+            <mat-select placeholder="Via Point" required (change)="infoMsg = 'NEW DELHI  Arrival Time : 00:00   Departure Time : 18:55'">
+              <!-- <mat-option>Select Source</mat-option> -->
+              <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
+                {{stn.stnName}} ({{stn.stnCode}})
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+            <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-form-field>
+          <mat-form-field class="col-md-3 col-sm-6 col-12">
+            <mat-select placeholder="Reservation Upto" required (change)="infoMsg = 'MANDUADIH Arrival Time : 07:00 Departure Time : 00:00'">
+              <!-- <mat-option>Select Destination</mat-option> -->
+              <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
+                {{stn.stnName}} ({{stn.stnCode}})
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+            <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-form-field>
+          <mat-form-field class="col-md-3 col-sm-6 col-12">
+            <mat-select placeholder="Boarding Point" required (change)="infoMsg = 'NEW DELHI  Arrival Time : 00:00   Departure Time : 18:55'">
+              <!-- <mat-option>Select Source</mat-option> -->
+              <mat-option *ngFor="let stn of stnList" [value]="stn.stnCode">
+                {{stn.stnName}} ({{stn.stnCode}})
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="animalControl.hasError('required')">Please choose an animal</mat-error>
+            <mat-hint>{{animalControl.value?.sound}}</mat-hint> -->
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
     </form>
     <div *ngIf="(infoMsg !== '') || (infoMsg.length !== 0)" class="card-footer py-2 bg-white text-danger ">
       <span *ngIf="infoMsg !== ''">{{infoMsg}}</span>

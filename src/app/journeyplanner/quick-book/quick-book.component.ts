@@ -18,6 +18,7 @@ export class QuickBookComponent implements OnInit {
 
   helpMsg: Array<string> = [];
   infoMsg: string = '';
+  panelOpenState: boolean = false;
 
   fetchedAccomodationAvailability: any = [
     {avl_2A: 'AVAILABLE 8', avl_SL: 'AVAILABLE 85'},
