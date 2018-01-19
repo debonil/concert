@@ -1,7 +1,17 @@
 ::ng-deep .mat-expansion-panel-body {
   padding: 0px !important;
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
-::ng-deep .mat-expansion-panel-header.mat-expanded:focus {
+::ng-deep .mat-expansion-panel-header {
   background: rgba(0, 0, 0, 0.04) !important;
+}
+::ng-deep .mat-expansion-panel-header:focus {
+  background: rgba(0, 0, 0, 0.08) !important;
 }

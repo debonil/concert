@@ -9,7 +9,8 @@ import * as appconfig from '../environments/appconfig';
 })
 export class AppComponent implements OnInit {
   title: string = 'CONCERT';
-  theme: string = 'theme-blue-grey';
+  // theme: string = 'theme-blue-grey';
+  theme: string = 'theme-teal';
 
   @ViewChild('focusSetter') focusSetter: any;
 
