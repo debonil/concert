@@ -29,6 +29,7 @@ import { CancellationComponent } from './cancellation/cancellation.component';
 import { ModificationComponent } from './modification/modification.component';
 import { QuickBookComponent } from './journeyplanner/quick-book/quick-book.component';
 import { DtcTxnComponent } from './my-account/dtc-txn/dtc-txn.component';
+import { MyAccountComponent } from './my-account/my-account/my-account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -59,7 +60,12 @@ const routes: Routes = [
       { path: 'cur_bkg_availability_remote_wise', component: CurBkgAvailabilityRemoteWiseComponent },
     ]
   },
-  { path: 'dtc_txn', component: DtcTxnComponent},
+  { path: 'my', component: MyAccountComponent,
+    children: [
+      { path: '', component: DtcTxnComponent},
+      { path: 'dtc_txn', component: DtcTxnComponent},
+    ]
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full'},
 ];
 
