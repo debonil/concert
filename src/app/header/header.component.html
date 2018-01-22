@@ -60,34 +60,13 @@
         </div>
       </li>
     </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
-    <!-- <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item dropdown">
-        <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <i class="material-icons">format_color_fill</i>
-        </a>
-        <div class="dropdown-menu bg-dark text-light pull-left" style="left: -100px;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('')">Grey</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-grey')">Bluish-Grey</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-pink')">Pink</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue')">Blue</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-orange')">Blue & Orange</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-indigo')">Indigo</a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-teal')">Teal</a>
-        </div>
-      </li>
-    </ul> -->
     <ul class="navbar-nav mt-2 mt-lg-0 py-0 ml-lg-5">
       <li class="nav-item dropdown py-0">
         <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">format_color_fill</i>
         </a>
-        <div class="dropdown-menu bg-white text-dark pull-left" style="left: -100px;" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu bg-white text-dark pull-left" style="left: -100px" aria-labelledby="navbarDropdown">
           <a class="bg-white text-dark" (click)="themeOut.emit('')">
             <button mat-mini-fab class="m-1" style="background-color:#9E9E9E">
               <i *ngIf="themeIn===''" class="material-icons">done</i>
@@ -98,26 +77,6 @@
               <i *ngIf="themeIn==='theme-blue-grey'" class="material-icons">done</i>
             </button>
           </a>
-          <!-- <a class="bg-white text-dark" (click)="themeOut.emit('theme-pink')">
-            <button mat-mini-fab class="m-1" style="background-color:#E91E63">
-              <i *ngIf="themeIn==='theme-pink'" class="material-icons">done</i>
-            </button>
-          </a> -->
-          <!-- <a class="bg-white text-dark" (click)="themeOut.emit('theme-blue')">
-            <button mat-mini-fab class="m-1" style="background-color:#2196F3">
-              <i *ngIf="themeIn==='theme-blue'" class="material-icons">done</i>
-            </button>
-          </a> -->
-          <!-- <a class="bg-white text-dark" (click)="themeOut.emit('theme-blue-orange')">
-            <button mat-mini-fab class="m-1" style="background-color:#2196F3">
-              <i *ngIf="themeIn==='theme-blue-orange'" class="material-icons">done</i>
-            </button>
-          </a> -->
-          <!-- <a class="bg-white text-dark" (click)="themeOut.emit('theme-indigo')">
-            <button mat-mini-fab class="m-1" style="background-color:#3F51B5">
-              <i *ngIf="themeIn==='theme-indigo'" class="material-icons">done</i>
-            </button>
-          </a> -->
           <a class="bg-white text-dark" (click)="themeOut.emit('theme-teal')">
             <button mat-mini-fab class="m-1" style="background-color:#009688">
               <i *ngIf="themeIn==='theme-teal'" class="material-icons">done</i>
@@ -125,80 +84,18 @@
           </a>
         </div>
       </li>
+      <!-- <li class="nav-item dropdown py-0">
+        <a class="nav-link mr-xl-2 bg-dark text-light font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" (click)="incFontSize()">
+          A+
+        </a>
+      </li>
+      <li class="nav-item dropdown py-0">
+        <a class="nav-link mr-xl-2 bg-dark text-light font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" (click)="decFontSize()">
+          A-
+        </a>
+      </li> -->
     </ul>
-
-    <!-- <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item dropdown">
-        <a (click)="openDialog()" class="nav-link mr-xl-2 bg-dark text-light border border-6 border-top-0 border-left-0 border-right-0" [ngClass]="{'border-secondary': router.url.startsWith('/home'),  'border-dark': (router.url !== '/home')}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="material-icons">format_color_fill</i>
-        </a>
-      </li>
-    </ul> -->
-    <!-- <ul class="navbar-nav mt-2 mt-lg-0">
-      <li class="nav-item dropdown">
-        <a class="nav-link mr-xl-2 bg-dark text-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-          <i class="material-icons">format_color_fill</i>
-        </a>
-        <div class="dropdown-menu bg-dark text-light pull-left" style="left: -100px;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('')">
-            <button mat-mini-fab class="m-1" style="background-color:#9E9E9E">
-              <i *ngIf="themeIn===''" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#9E9E9E">
-              <i *ngIf="themeIn===''" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-grey')">
-            <button mat-mini-fab class="m-1" style="background-color:#607D8B">
-              <i *ngIf="themeIn==='theme-blue-grey'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#607D8B">
-              <i *ngIf="themeIn==='theme-blue-grey'" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-pink')">
-            <button mat-mini-fab class="m-1" style="background-color:#E91E63">
-              <i *ngIf="themeIn==='theme-pink'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#E91E63">
-              <i *ngIf="themeIn==='theme-pink'" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue')">
-            <button mat-mini-fab class="m-1" style="background-color:#2196F3">
-              <i *ngIf="themeIn==='theme-blue'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#2196F3">
-              <i *ngIf="themeIn==='theme-blue'" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-blue-orange')">
-            <button mat-mini-fab class="m-1" style="background-color:#2196F3">
-              <i *ngIf="themeIn==='theme-blue-orange'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#FF9800">
-              <i *ngIf="themeIn==='theme-blue-orange'" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-indigo')">
-            <button mat-mini-fab class="m-1" style="background-color:#3F51B5">
-              <i *ngIf="themeIn==='theme-indigo'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#3F51B5">
-              <i *ngIf="themeIn==='theme-indigo'" class="material-icons">done</i>
-            </button>
-          </a>
-          <a class="dropdown-item bg-dark text-light" (click)="themeOut.emit('theme-teal')">
-            <button mat-mini-fab class="m-1" style="background-color:#009688">
-              <i *ngIf="themeIn==='theme-teal'" class="material-icons">done</i>
-            </button>
-            <button mat-mini-fab class="m-1" style="background-color:#009688">
-              <i *ngIf="themeIn==='theme-teal'" class="material-icons">done</i>
-            </button>
-          </a>
-        </div>
-      </li>
-    </ul> -->
   </div>
 </nav>

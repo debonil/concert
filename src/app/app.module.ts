@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent, ThemeDialogComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JourneyplannerModule } from './journeyplanner/journeyplanner.module';
 import { EnquiriesModule } from './enquiries/enquiries.module';
@@ -19,11 +19,11 @@ import { ModificationModule } from './modification/modification.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent, ThemeDialogComponent,
+    HeaderComponent,
     FooterComponent,
     DtcTxnComponent,
   ],
-  entryComponents: [ThemeDialogComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

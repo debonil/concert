@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Router } from '@angular/router';
+import { concat } from 'rxjs/operator/concat';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  currZoom: number = 1.0;
 
   @Input() themeIn: string;
   @Output() themeOut = new EventEmitter();
@@ -17,37 +19,40 @@ export class HeaderComponent implements OnInit {
   constructor(public router: Router, public dialog: MatDialog) { }
 
   ngOnInit() {
-    // this.router.events.subscribe((e: any)=>{
-    //   console.log(`router: ${e}`);
-    // })
+    document.getElementsByTagName('html')[0].style.fontSize = '1.0rem';
   }
 
-  openDialog(): void {
-    this.dialogRef = this.dialog.open(ThemeDialogComponent, {
-      // width: '8.5rem',
-      data: { theme: this.themeIn }
-    });
-    // dialogRef.updatePosition({ top: '50px', right: '10px' });
-    this.dialogRef.afterClosed().subscribe(theme => {
-      console.log('The dialog was closed' + theme);
-      if (theme !== undefined) {
-        this.themeOut.emit(theme);
-      }
-    });
+  incFontSize() {
+    let fs = document.getElementsByTagName('html')[0].style.fontSize;
+    fs = fs.substring(0, fs.length - 3);
+    const fsn: number = Number(fs) + 0.1;
+    console.log('fsn: ' + fsn);
+    if (fsn <= 1.4) {
+      document.getElementsByTagName('html')[0].style.fontSize = fsn + 'rem';
+    }
   }
-}
+  decFontSize() {
+    let fs = document.getElementsByTagName('html')[0].style.fontSize;
+    fs = fs.substring(0, fs.length - 3);
+    const fsn: number = Number(fs) - 0.1;
+    console.log('fsn: ' + fsn);
+    if (fsn >= 0.6) {
+      document.getElementsByTagName('html')[0].style.fontSize = fsn + 'rem';
+    }
+  }
 
-@Component({
-  selector: 'app-theme-dialog',
-  templateUrl: 'theme-dialog.component.html'
-})
-export class ThemeDialogComponent {
-  constructor(
-    public dialogRef: MatDialogRef<ThemeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  changeTheme(theme: string): void {
-    this.data.theme = theme;
-    this.dialogRef.close(this.data.theme);
+  zoomIn() {
+    if (this.currZoom <= 1.2) {
+      this.currZoom += 0.1;
+      const bodyElement: HTMLElement = <HTMLElement>document.getElementsByTagName('BODY')[0];
+      bodyElement.style.zoom = this.currZoom.toString();
+    }
+  }
+  zoomOut() {
+    if (this.currZoom >= 0.9) {
+      this.currZoom -= 0.1;
+      const bodyElement: HTMLElement = <HTMLElement>document.getElementsByTagName('BODY')[0];
+      bodyElement.style.zoom = this.currZoom.toString();
+    }
   }
 }

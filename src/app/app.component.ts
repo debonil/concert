@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title: string = 'CONCERT';
   // theme: string = 'theme-blue-grey';
   theme: string = 'theme-teal';
+  fontSize: string = 'fontSize-md';
 
   @ViewChild('focusSetter') focusSetter: any;
 

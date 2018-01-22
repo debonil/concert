@@ -1,7 +1,7 @@
-<div [className]="theme">
+<div id="divAppRoot" [className]="theme">
   <app-header [themeIn]="theme" (themeOut)="changeTheme($event)"></app-header>
   <div #focusSetter tabIndex="0" class="py-2" style="min-height:calc(100vh - 5rem)">
     <router-outlet></router-outlet>
   </div>
   <app-footer></app-footer>
-</div> 
+</div>
