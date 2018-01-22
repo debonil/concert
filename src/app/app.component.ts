@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Inject } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import * as appconfig from '../environments/appconfig';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title: string = 'CONCERT';
   // theme: string = 'theme-blue-grey';
   theme: string = 'theme-teal';
@@ -16,7 +18,10 @@ export class AppComponent implements OnInit {
 
   @ViewChild('focusSetter') focusSetter: any;
 
-  constructor(private router: Router) {
+  animal: string;
+  name: string;
+
+  constructor(private router: Router, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -27,6 +32,10 @@ export class AppComponent implements OnInit {
         this.focusSetter.nativeElement.focus();
       }
     });
+  }
+
+  ngAfterViewInit() {
+    this.openDialog();
   }
 
   @HostListener('window:keydown', ['$event'])
@@ -64,5 +73,32 @@ export class AppComponent implements OnInit {
   changeTheme(e: any) {
     console.log(e);
     this.theme = e;
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      width: '250px',
+      data: { name: this.name, animal: this.animal }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+}
+
+@Component({
+  selector: 'app-login-dialog',
+  templateUrl: 'login-dialog.html',
+})
+export class LoginDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<LoginDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
