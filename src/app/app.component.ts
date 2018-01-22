@@ -35,7 +35,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    setTimeout({
     this.openDialog();
+    }, 3333);
   }
 
   @HostListener('window:keydown', ['$event'])
