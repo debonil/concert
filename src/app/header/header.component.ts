@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() themeIn: string;
   @Output() themeOut = new EventEmitter();
+  @Output() logOut = new EventEmitter();
 
   dialogRef: any;
 

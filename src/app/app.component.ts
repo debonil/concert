@@ -35,8 +35,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.openDialog();
-    }, 3333);
+      this.logOut();
+    }, 333);
   }
 
   @HostListener('window:keydown', ['$event'])
@@ -76,9 +76,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.theme = e;
   }
 
-  openDialog(): void {
+  logOut(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '250px',
+      disableClose: true,
       data: { name: this.name, animal: this.animal }
     });
 
@@ -95,11 +96,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 })
 export class LoginDialogComponent {
 
+  hide: boolean = true;
+
   constructor(
     public dialogRef: MatDialogRef<LoginDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
+  login(): void {
     this.dialogRef.close();
   }
 }
