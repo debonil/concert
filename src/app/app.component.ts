@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   title: string = 'CONCERT';
   // theme: string = 'theme-blue-grey';
   theme: string = 'theme-teal';
+  // theme: string = '';
   fontSize: string = 'fontSize-md';
 
   @ViewChild('focusSetter') focusSetter: any;
@@ -50,8 +51,8 @@ export class AppComponent implements OnInit {
       this.router.navigate(['/dtc_txn']);
       return false;
     } else if (this.router.url === '/enquiries' && (event.keyCode >= 65 && (event.keyCode <= 90))) {
-      console.log('/enquiries/' + appconfig.enquiriesList[event.keyCode-65].path);
-      this.router.navigate(['/enquiries/' + appconfig.enquiriesList[event.keyCode-65].path]);
+      console.log('/enquiries/' + appconfig.enquiriesList[event.keyCode - 65].path);
+      this.router.navigate(['/enquiries/' + appconfig.enquiriesList[event.keyCode - 65].path]);
       return false;
     }
   }

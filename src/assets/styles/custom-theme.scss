@@ -1,17 +1,17 @@
 @import '../node_modules/@angular/material/theming';
 @include mat-core();
 
-// theme-default : (grey)
-$theme-primary: mat-palette($mat-grey);
+// theme-default : (blue-yellow)
+$theme-primary: mat-palette($mat-blue);
 $theme-accent: mat-palette($mat-orange, 400);
 $theme-warn: mat-palette($mat-red);
-$theme-grey: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
-@include angular-material-theme($theme-grey);
+$theme-default: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+@include angular-material-theme($theme-default);
 .text-primary {
   color: mat-color($theme-primary, 500) !important;
 }
 .text-secondary {
-  color: mat-color($theme-accent, 400) !important;
+  color: mat-color($theme-accent, 700) !important;
 }
 .text-light {
   color: mat-color($theme-primary, 50) !important;
