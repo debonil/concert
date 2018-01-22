@@ -3,12 +3,14 @@
 // @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
 // @import './assets/styles/custom-theme';
 
-// //  --------- custom THEME begins ---------
+@import './assets/styles/material-icon.css';
+
+// --------- custom THEME begins ---------
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 @import './assets/styles/custom-theme';
-// //  --------- custom THEME ends ---------
+// --------- custom THEME ends ---------
 
 /* ------ vertical align CSS begins ------- */
 .vertical-align-bottom {

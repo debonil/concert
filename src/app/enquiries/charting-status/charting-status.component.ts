@@ -46,7 +46,7 @@ export class ChartingStatusComponent implements OnInit {
     return this.inputTrainNo.hasError('required') ? 'You must enter a value' : 'Enter a valid Train No.';
   }
 
-  onlyNumericInput(e:any) {
+  onlyNumericInput(e: any) {
     let key: any;
     key = ((document.all) ? (key = e.keyCode) : (key = e.which));
     return (key === 8 || key === 32 || (key >= 48 && key <= 57));

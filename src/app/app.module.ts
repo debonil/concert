@@ -11,17 +11,16 @@ import { FooterComponent } from './footer/footer.component';
 import { JourneyplannerModule } from './journeyplanner/journeyplanner.module';
 import { EnquiriesModule } from './enquiries/enquiries.module';
 import { ServicesModule } from './services/services.module';
-import { DtcTxnComponent } from './dtc-txn/dtc-txn.component';
 import { MyMaterialComponentsModule } from './my-material-components/my-material-components.module';
 import { CancellationModule } from './cancellation/cancellation.module';
 import { ModificationModule } from './modification/modification.module';
+import { MyAccountModule } from './my-account/my-account.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DtcTxnComponent,
   ],
   entryComponents: [],
   imports: [
@@ -34,7 +33,8 @@ import { ModificationModule } from './modification/modification.module';
     JourneyplannerModule,
     EnquiriesModule,
     CancellationModule,
-    ModificationModule
+    ModificationModule,
+    MyAccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]

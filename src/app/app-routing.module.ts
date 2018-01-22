@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { JpComponent } from './journeyplanner/jp/jp.component';
-import { DtcTxnComponent } from './dtc-txn/dtc-txn.component';
 import { EnquiriesComponent } from './enquiries/enquiries.component';
 import { EnquiriesMenuComponent } from './enquiries/enquiries-menu/enquiries-menu.component';
 import { AccomodationAvailabilityComponent } from './enquiries/accomodation-availability/accomodation-availability.component';
@@ -11,20 +10,25 @@ import { FareEnquiryComponent } from './enquiries/fare-enquiry/fare-enquiry.comp
 import { SearchForPnrComponent } from './enquiries/search-for-pnr/search-for-pnr.component';
 import { BookingDateTimeComponent } from './enquiries/booking-date-time/booking-date-time.component';
 import { PnrSessionHistoryComponent } from './enquiries/pnr-session-history/pnr-session-history.component';
+// tslint:disable-next-line:max-line-length
 import { PassengersBookedInEachCoachComponent } from './enquiries/passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
 import { PassengersBookedAfterChartingComponent } from './enquiries/passengers-booked-after-charting/passengers-booked-after-charting.component';
+// tslint:disable-next-line:max-line-length
 import { PassengersCancelledAfterChartingComponent } from './enquiries/passengers-cancelled-after-charting/passengers-cancelled-after-charting.component';
 import { CoachPositionComponent } from './enquiries/coach-position/coach-position.component';
+// tslint:disable-next-line:max-line-length
 import { AccomodationAvailabilityForADestinationComponent } from './enquiries/accomodation-availability-for-a-destination/accomodation-availability-for-a-destination.component';
 import { TrainsForADestinationComponent } from './enquiries/trains-for-a-destination/trains-for-a-destination.component';
 import { NtesTrainStatusComponent } from './enquiries/ntes-train-status/ntes-train-status.component';
 import { ChartingStatusComponent } from './enquiries/charting-status/charting-status.component';
 import { BerthTypeAvailabilityComponent } from './enquiries/berth-type-availability/berth-type-availability.component';
 import { CurrentBookingAvailabilityComponent } from './enquiries/current-booking-availability/current-booking-availability.component';
+// tslint:disable-next-line:max-line-length
 import { CurBkgAvailabilityRemoteWiseComponent } from './enquiries/cur-bkg-availability-remote-wise/cur-bkg-availability-remote-wise.component';
 import { CancellationComponent } from './cancellation/cancellation.component';
 import { ModificationComponent } from './modification/modification.component';
 import { QuickBookComponent } from './journeyplanner/quick-book/quick-book.component';
+import { DtcTxnComponent } from './my-account/dtc-txn/dtc-txn.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},

@@ -14,8 +14,10 @@ import { BookingDateTimeComponent } from './booking-date-time/booking-date-time.
 import { PnrSessionHistoryComponent } from './pnr-session-history/pnr-session-history.component';
 import { PassengersBookedInEachCoachComponent } from './passengers-booked-in-each-coach/passengers-booked-in-each-coach.component';
 import { PassengersBookedAfterChartingComponent } from './passengers-booked-after-charting/passengers-booked-after-charting.component';
+// tslint:disable-next-line:max-line-length
 import { PassengersCancelledAfterChartingComponent } from './passengers-cancelled-after-charting/passengers-cancelled-after-charting.component';
 import { CoachPositionComponent } from './coach-position/coach-position.component';
+// tslint:disable-next-line:max-line-length
 import { AccomodationAvailabilityForADestinationComponent } from './accomodation-availability-for-a-destination/accomodation-availability-for-a-destination.component';
 import { TrainsForADestinationComponent } from './trains-for-a-destination/trains-for-a-destination.component';
 import { NtesTrainStatusComponent } from './ntes-train-status/ntes-train-status.component';
@@ -31,7 +33,12 @@ import { CurBkgAvailabilityRemoteWiseComponent } from './cur-bkg-availability-re
     AppRoutingModule,
     MyMaterialComponentsModule
   ],
-  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent, TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent, PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent, CoachPositionComponent, AccomodationAvailabilityForADestinationComponent, TrainsForADestinationComponent, NtesTrainStatusComponent, ChartingStatusComponent, BerthTypeAvailabilityComponent, CurrentBookingAvailabilityComponent, CurBkgAvailabilityRemoteWiseComponent],
+  declarations: [EnquiriesComponent, EnquiriesMenuComponent, AccomodationAvailabilityComponent, CurrentStatusComponent,
+                TimeTableComponent, FareEnquiryComponent, SearchForPnrComponent, BookingDateTimeComponent, PnrSessionHistoryComponent,
+                PassengersBookedInEachCoachComponent, PassengersBookedAfterChartingComponent, PassengersCancelledAfterChartingComponent,
+                CoachPositionComponent, AccomodationAvailabilityForADestinationComponent, TrainsForADestinationComponent,
+                NtesTrainStatusComponent, ChartingStatusComponent, BerthTypeAvailabilityComponent, CurrentBookingAvailabilityComponent,
+                CurBkgAvailabilityRemoteWiseComponent],
   exports: [EnquiriesComponent]
 })
 export class EnquiriesModule { }
