@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild, HostListener, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, HostListener, Inject, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import * as appconfig from '../environments/appconfig';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
-import { AfterViewInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-root',
@@ -35,8 +34,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    setTimeout({
-    this.openDialog();
+    setTimeout(() => {
+      this.openDialog();
     }, 3333);
   }
 

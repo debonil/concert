@@ -59,46 +59,48 @@
         <div class="col-md-3 col-12 pull-right px-1 text-secondary" style="text-align: right;">
         </div>
       </mat-expansion-panel-header>
-      <table class="table table-responsive table-bordered text-center m-0">
-        <thead class="text-dark bg-light">
-          <tr>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-            <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
-          </tr>
-        </thead>
-        <tbody class="text-dark">
-          <tr>
-            <td scope="row" class="text-primary py-1">
-              <div>PQWL26/WL25</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-            <td scope="row" class="text-primary py-1">
-              <div>AVAILABLE 20</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-            <td scope="row" class="text-primary py-1">
-              <div>PQWL26/WL25</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-            <td scope="row" class="text-primary py-1">
-              <div>PQWL26/WL25</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-            <td scope="row" class="text-primary py-1">
-              <div>AVAILABLE 20</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-            <td scope="row" class="text-primary py-1">
-              <div>PQWL26/WL25</div>
-              <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table table-bordered text-center m-0">
+          <thead class="text-dark bg-light">
+            <tr>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+              <td scope="col" class="py-1">{{todayDate | date: 'dd-MM-yyyy'}}</td>
+            </tr>
+          </thead>
+          <tbody class="text-dark">
+            <tr>
+              <td scope="row" class="text-primary py-1">
+                <div>PQWL26/WL25</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+              <td scope="row" class="text-primary py-1">
+                <div>AVAILABLE 20</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+              <td scope="row" class="text-primary py-1">
+                <div>PQWL26/WL25</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+              <td scope="row" class="text-primary py-1">
+                <div>PQWL26/WL25</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+              <td scope="row" class="text-primary py-1">
+                <div>AVAILABLE 20</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+              <td scope="row" class="text-primary py-1">
+                <div>PQWL26/WL25</div>
+                <button mat-button class="text-secondary bg-secondary-light w-100 px-1 py-0">Book</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>
