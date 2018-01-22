@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
       this.router.navigate(['/enquiries']);
       return false;
     } else if (event.keyCode === 117) {
-      this.router.navigate(['/dtc_txn']);
+      this.router.navigate(['/my']);
       return false;
     } else if (this.router.url === '/enquiries' && (event.keyCode >= 65 && (event.keyCode <= 90))) {
       console.log('/enquiries/' + appconfig.enquiriesList[event.keyCode - 65].path);
