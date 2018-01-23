@@ -24,6 +24,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    this.router.navigateByUrl('');
     this.router.events
     .subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
