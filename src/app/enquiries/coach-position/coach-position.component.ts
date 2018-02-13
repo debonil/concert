@@ -9,32 +9,32 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./coach-position.component.scss']
 })
 export class CoachPositionComponent implements OnInit {
-  accomodationAvailabilityFetched: boolean;
+  accomodationAvailabilityFetched: boolean = true;
   accomodationAvailabilityForm: FormGroup;
 
   inputTrainNo: FormControl;
   inputTrainName: FormControl;
 
   fetchedAccomodationAvailability: any = [
+    {coach_id: 'SLR', coach_position: '01', class: 'OT'},
+    {coach_id: 'GEN', coach_position: '01', class: 'GN'},
     {coach_id: 'S1', coach_position: '01', class: 'SL'},
     {coach_id: 'S2', coach_position: '01', class: 'SL'},
     {coach_id: 'S3', coach_position: '01', class: 'SL'},
     {coach_id: 'S4', coach_position: '01', class: 'SL'},
     {coach_id: 'S5', coach_position: '01', class: 'SL'},
+    {coach_id: 'PC', coach_position: '01', class: 'SL'},
+    {coach_id: 'A1', coach_position: '01', class: '1A'},
     {coach_id: 'B1', coach_position: '01', class: '2A'},
     {coach_id: 'B2', coach_position: '01', class: '2A'},
     {coach_id: 'B3', coach_position: '01', class: '2A'},
-    {coach_id: 'S5', coach_position: '01', class: 'SL'},
-    {coach_id: 'B1', coach_position: '01', class: '3A'},
-    {coach_id: 'B2', coach_position: '01', class: '3A'},
-    {coach_id: 'B3', coach_position: '01', class: '3A'},
     {coach_id: 'B4', coach_position: '01', class: '2A'},
     {coach_id: 'B5', coach_position: '01', class: '2A'},
-    {coach_id: 'A1', coach_position: '01', class: '1A'},
-    {coach_id: 'S6', coach_position: '01', class: 'SL'},
+    {coach_id: 'SLR', coach_position: '01', class: 'SL'},
+/*     {coach_id: 'S6', coach_position: '01', class: 'SL'},
     {coach_id: 'S7', coach_position: '01', class: 'SL'},
     {coach_id: 'S8', coach_position: '01', class: 'SL'},
-    {coach_id: 'S9', coach_position: '01', class: 'SL'},
+    {coach_id: 'S9', coach_position: '01', class: 'SL'}, */
   ];
 
   todayDate: Date = new Date();
@@ -61,7 +61,7 @@ export class CoachPositionComponent implements OnInit {
     return this.inputTrainNo.hasError('required') ? 'You must enter a value' : 'Enter a valid Train No.';
   }
 
-  onlyNumericInput(e:any) {
+  onlyNumericInput(e: any) {
     let key: any;
     key = ((document.all) ? (key = e.keyCode) : (key = e.which));
     return (key === 8 || key === 32 || (key >= 48 && key <= 57));
