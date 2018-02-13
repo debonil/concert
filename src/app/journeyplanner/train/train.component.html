@@ -1,20 +1,20 @@
 <div class="card" (click)="trainSelected.emit(index)" (focus)="trainSelected.emit(index)">
   <div class="card-body text-primary px-2 pr-md-0 py-2">
     <div class="row">
-      <div class="col-lg-3 col-8 text-md">
+      <div class="col-lg-3 col-12 text-md">
         <div class="text-primary">
           <span class="material-icons vertical-align-middle">train</span>
           <span>{{train.trainName}}({{train.trainNumber}})</span>
         </div>
       </div>
-      <div class="d-lg-none col-4">
+      <!-- <div class="d-lg-none col-4">
         <div class="text-primary w-100">
           <button *ngIf="!panelOpenState" mat-button color="primary" class="border rounded bg-light w-100 text-sm px-0" (click)="panelOpenState = true">Check Availability</button>
           <button *ngIf="panelOpenState" mat-button color="primary" class="border rounded bg-light w-100" (click)="panelOpenState = true">
             <i class="material-icons">loop</i>
           </button>
         </div>
-      </div>
+      </div> -->
       <div class="row col-lg-5 col-12 text-center text-md">
         <div class="col-4">
           <div>
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="row d-none d-lg-block col-lg-4 col-12 px-4 py-2 py-lg-0">
+      <div class="row d-none d-lg-block col-lg-4 col-12 px-4 py-2 py-lg-0 text-center">
         <mat-form-field class="col-6">
           <mat-select placeholder="Class" required>
             <!-- <mat-option value="">All Class</mat-option> -->
