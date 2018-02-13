@@ -18,6 +18,7 @@ import { PassengerComponent } from './passenger/passenger.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [JpInputComponent, TrainListComponent, FilterTrainListComponent, TrainComponent, JpComponent, QuickBookComponent, PassengerListComponent, PassengerComponent]
+  declarations: [JpInputComponent, TrainListComponent, FilterTrainListComponent, TrainComponent, JpComponent, QuickBookComponent,
+    PassengerListComponent, PassengerComponent]
 })
 export class JourneyplannerModule { }
