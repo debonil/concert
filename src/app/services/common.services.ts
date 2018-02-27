@@ -6,7 +6,7 @@ export class CommonService {
 
   constructor(private restClient: RestClientService) { }
 
-  getStationNameList(){
-    return this.restClient.get('stationName');
+  getStationNameList() {
+    return this.restClient.getFromLocalJson('stationName');
   }
 }

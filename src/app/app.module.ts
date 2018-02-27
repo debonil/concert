@@ -12,7 +12,7 @@ import * as _moment from 'moment';
 // const moment = _rollupMoment || _moment;
 const moment = _moment;
 
-import { AppComponent, LoginDialogComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { JourneyplannerModule } from './journeyplanner/journeyplanner.module';
@@ -22,6 +22,8 @@ import { MyMaterialComponentsModule } from './my-material-components/my-material
 import { CancellationModule } from './cancellation/cancellation.module';
 import { ModificationModule } from './modification/modification.module';
 import { MyAccountModule } from './my-account/my-account.module';
+import { AuthenticationModule } from './authentication/authentication.module';
+import { LoginDialogComponent } from './authentication/login-dialog/login-dialog.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -39,11 +41,11 @@ export const MY_FORMATS = {
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    LoginDialogComponent
+    FooterComponent
   ],
   entryComponents: [LoginDialogComponent],
   imports: [
+    AuthenticationModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

@@ -6,7 +6,7 @@ export class JourneyPlannerService {
 
   constructor(private restClient: RestClientService) { }
 
-  getTrainList(){
-    return this.restClient.get('trainList');
+  getTrainList() {
+    return this.restClient.getFromLocalJson('trainList');
   }
 }

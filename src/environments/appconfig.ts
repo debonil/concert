@@ -35,3 +35,38 @@ class EnqType {
   name: string = '';
   path: string = '';
 }
+
+export const baseUrl = 'https://testngetjp.irctc.co.in';
+export const baseUrlWs = 'https://testngetjp.irctc.co.in/eticketing';
+//export const baseUrlWs = 'http://localhost:7001/eticketing';
+
+export const modules = {
+  'depositList': 'ewallet',
+  'refundList': 'ewallet',
+  'ewalletStatement': 'ewallet',
+  'ewalletStatementPdf': 'ewallet',
+  'depositBankList': 'ewallet',
+  'initDepositPayment': 'ewallet',
+  'forgetTxnPasswordOtp': 'ewallet',
+  'forgetTxnPassword': 'ewallet',
+  'addLoyaltyAccountOtp': 'ewallet',
+  'addLoyaltyAccount': 'ewallet',
+  'depositData': 'ewallet',
+  'ewalletRenewal': 'ewallet',
+  'fetchLoyaltyDetails': 'soft',
+  'accountDetails': 'soft',
+  'softAccountDetails': 'soft',
+  'initLoyaltyPurchase': 'soft',
+  'initLoyaltyPurchasePayment': 'soft',
+  'loyaltyPurchaseData': 'soft',
+  'updateKYC': 'profile',
+  'updateUser': 'profile',
+  'ewalletRegisterNow': 'ewallet',
+  'ewalletRegister': 'ewallet',
+  'initEwalletRegPayment': 'ewallet',
+  'initFTuserRegPayment': 'profile',
+  'ftUserPaymentData' : 'profile',
+  'ewalletRegisterData': 'ewallet',
+  'ewalletRegWithNoPayment': 'ewallet',
+  'changeTxnPassword': 'ewallet'
+}

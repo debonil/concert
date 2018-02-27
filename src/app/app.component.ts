@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, HostListener, Inject, AfterViewInit } fro
 import { Router, NavigationEnd } from '@angular/router';
 import * as appconfig from '../environments/appconfig';
 import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { LoginDialogComponent } from './authentication/login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -88,22 +89,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       console.log('The dialog was closed');
       this.animal = result;
     });
-  }
-}
-
-@Component({
-  selector: 'app-login-dialog',
-  templateUrl: 'login-dialog.html',
-})
-export class LoginDialogComponent {
-
-  hide: boolean = true;
-
-  constructor(
-    public dialogRef: MatDialogRef<LoginDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  login(): void {
-    this.dialogRef.close();
   }
 }
