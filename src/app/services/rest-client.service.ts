@@ -190,7 +190,7 @@ export class RestClientService {
       const options = {headers: headers, observe: 'response'};
       console.log(`URL: ${url}`);
       return this.httpClient.post<any>(url, data,{headers: headers,
-         observe: 'response', responseType: 'text'})
+         observe: 'response'})
           .do(
               resp => resp,
               (err: HttpErrorResponse) => this.checkErrorStatus(err)
