@@ -8,15 +8,18 @@ import { Router } from "@angular/router";
 import * as appconfig from '../../environments/appconfig';
 import { Token } from '../model/Token';
 
+import jsrsasign = require('jsrsasign');
+
 @Injectable()
 export class RestClientService {
+
   baseUrlLocal = `./assets/data`;
   token: Token;
   csrfLockAvl: boolean;
   uid: string;
   sharedKey: string;
   lastXForwardedFor: string;
-  csrfToken: string;
+  // csrfToken: string;
   baseUrl = `${appconfig.baseUrlWs}/protected/mapps1`;
   serviceUrl = `${appconfig.baseUrlWs}/protected`;
   authUrl = `${appconfig.baseUrl}/authprovider/oauth/token`;
@@ -28,11 +31,11 @@ export class RestClientService {
 
   init() {
       this.uid = '' + new Date().getTime();
-      this.csrfToken = this.uid;
+      // this.csrfToken = this.uid;
       this.token = null;
   }
 
-  get(serviceName: string, oauthFlag: boolean = true, csrfFlag: boolean = true): Observable<any> {
+  get(serviceName: string, oauthFlag: boolean = true, dssFlag: boolean = true): Observable<any> {
       let headers = new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
           .set('greq', this.uid);
@@ -41,10 +44,11 @@ export class RestClientService {
           headers = headers.set('Authorization', `Bearer ${this.token.access_token}`);
       }
 
-      if (csrfFlag) {
-          headers = headers.set('spa-csrf-token', this.csrfToken);
-          console.log("req-csrf: " + this.csrfToken);
-      }
+      if (dssFlag) {
+        const dss = this.genDss();
+        headers = headers.set('dss', dss);
+        console.log("dss: " + dss);
+    }
       const module=this.getModule(serviceName);
       const url = `${this.serviceUrl}/${module}/${serviceName}`;
 
@@ -59,16 +63,16 @@ export class RestClientService {
            (err: HttpErrorResponse) => this.checkErrorStatus(err)
           )
           .map(resp => {
-              if (csrfFlag) {
-                  this.csrfToken = resp.headers.get("csrf-token");
-                  console.log("resp-csrf: " + this.csrfToken);
+              if (dssFlag) {
+                  this.lastXForwardedFor = resp.headers.get("X-Request-For");
+                  console.log("resp-csrf: " + this.lastXForwardedFor);
                   this.csrfLockAvl = true;
               }
               return resp.body;
           });
   }
 
-  getWithParameter(serviceName: string, oauthFlag: boolean = true, csrfFlag: boolean = true): Observable<any> {
+  getWithParameter(serviceName: string, oauthFlag: boolean = true, dssFlag: boolean = true): Observable<any> {
       let headers = new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
           .set('greq', this.uid);
@@ -77,10 +81,11 @@ export class RestClientService {
           headers = headers.set('Authorization', `Bearer ${this.token.access_token}`);
       }
 
-      if (csrfFlag) {
-          headers = headers.set('spa-csrf-token', this.csrfToken);
-          console.log("req-csrf: " + this.csrfToken);
-      }
+      if (dssFlag) {
+        const dss = this.genDss();
+        headers = headers.set('dss', dss);
+        console.log("dss: " + dss);
+    }
       const module=this.getModule(serviceName.substring(0,serviceName.indexOf("/")));
       const url = `${this.serviceUrl}/${module}/${serviceName}`;
 
@@ -93,9 +98,9 @@ export class RestClientService {
            (err: HttpErrorResponse) => this.checkErrorStatus(err)
           )
           .map(resp => {
-              if (csrfFlag) {
-                  this.csrfToken = resp.headers.get("csrf-token");
-                  console.log("resp-csrf: " + this.csrfToken);
+              if (dssFlag) {
+                  this.lastXForwardedFor = resp.headers.get("X-Request-For");
+                  console.log("resp-csrf: " + this.lastXForwardedFor);
                   this.csrfLockAvl = true;
               }
               return resp.body;
@@ -103,8 +108,8 @@ export class RestClientService {
       );
   }
 
-  post(serviceName: string, data?: string, oauthFlag: boolean = true, csrfFlag: boolean = true): Observable<any> {
-      console.log("req-csrf: " + this.csrfToken);
+  post(serviceName: string, data?: string, oauthFlag: boolean = true, dssFlag: boolean = true): Observable<any> {
+      console.log("req-csrf: " + this.lastXForwardedFor);
 
       let headers = new HttpHeaders()
           .set('Content-Type', 'application/json; charset=utf-8')
@@ -114,9 +119,10 @@ export class RestClientService {
           headers = headers.set('Authorization', `Bearer ${this.token.access_token}`);
       }
 
-      if (csrfFlag) {
-          headers = headers.set('spa-csrf-token', this.csrfToken);
-          console.log("req-csrf: " + this.csrfToken);
+      if (dssFlag) {
+          const dss = this.genDss();
+          headers = headers.set('dss', dss);
+          console.log("dss: " + dss);
       }
 
       const module=this.getModule(serviceName);
@@ -131,9 +137,9 @@ export class RestClientService {
               (err: HttpErrorResponse) => this.checkErrorStatus(err)
              )
           .map(resp => {
-              if (csrfFlag) {
-                  this.csrfToken = resp.headers.get("csrf-token");
-                  console.log("resp-csrf: " + this.csrfToken);
+              if (dssFlag) {
+                  this.lastXForwardedFor = resp.headers.get("X-Request-For");
+                  console.log("resp-csrf: " + this.lastXForwardedFor);
                   this.csrfLockAvl = true;
               }
               return resp.body;
@@ -141,7 +147,7 @@ export class RestClientService {
   }
 
   getAuthToken(userid:string,pwd:string): Observable<any> {
-      console.log("req-csrf: " + this.csrfToken);
+      console.log("req-csrf: " + this.lastXForwardedFor);
       const credInB64=btoa(`${userid}:${pwd}`);
       const headers = new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
@@ -161,9 +167,9 @@ export class RestClientService {
               (err: HttpErrorResponse) => this.checkErrorStatus(err)
              ) */
           .map(resp => {
-             /*  if (csrfFlag) {
-                  this.csrfToken = resp.headers.get("csrf-token");
-                  console.log("resp-csrf: " + this.csrfToken);
+             /*  if (dssFlag) {
+                  this.lastXForwardedFor = resp.headers.get("X-Request-For");
+                  console.log("resp-csrf: " + this.lastXForwardedFor);
                   this.csrfLockAvl = true;
               } */
               this.token=resp.body;
@@ -190,44 +196,20 @@ export class RestClientService {
               (err: HttpErrorResponse) => this.checkErrorStatus(err)
              )
           .map(resp => {
-             /*  if (csrfFlag) {
-                  this.csrfToken = resp.headers.get("csrf-token");
-                  console.log("resp-csrf: " + this.csrfToken);
+             // if (dssFlag) {
+                  this.lastXForwardedFor = resp.headers.get("X-Request-For");
+                  console.log("resp-csrf: " + this.lastXForwardedFor);
                   this.csrfLockAvl = true;
-              } */
+             // }
               this.sharedKey=resp.body;
-              this.lastXForwardedFor=resp.headers.get('X-Request-For');
+              // this.lastXForwardedFor=resp.headers.get('X-Request-For');
               console.log(resp);
               
               return resp.body;
           });
   }
 
-  requestToken(username: string, password: string): Observable<any> {
-    
-    let basic = username + ':' + password;
-    basic = btoa(basic);
-    
-    const headers = new HttpHeaders()
-           // .set('Authorization', `Basic ${basic}`)
-           .set('Content-Type', 'application/x-www-form-urlencoded')
-           .set('Authorization', `Basic cmt2ZXJtYTpUZXN0aW5nMQ==`);
-           
-    console.log(`grant_type=password&username=${username}&password=Testing1&uid=${this.uid}`);
-    
-    const o:Observable<Token> = this.httpClient.post<Token>(`${appconfig.baseUrl}/authprovider/oauth/token`,
-    `grant_type=password&username=${username}&password=Testing1&uid=${this.uid}`,
-        {
-        headers: headers
-      })
-    .map(response => {
-       this.token=response;
-       return response;
-    });
-    
-    return o;
-  }
-
+  
   getText(serviceName: string): Observable<any> {
       const headers = new HttpHeaders()
           .set('Content-Type', 'application/x-www-form-urlencoded')
@@ -321,4 +303,64 @@ export class RestClientService {
         return resp;
       });
   }
+
+  genDss(): string {
+    let retVal = '';
+    try {
+        // Header
+const oHeader = {alg: 'HS256', typ: 'JWT'};
+// Payload
+const oPayload = {};
+const tNow = jsrsasign.KJUR.jws.IntDate.get('now');
+const tEnd = jsrsasign.KJUR.jws.IntDate.get('now + 1hour');
+oPayload['iss'] = this.uid; // issuer
+oPayload['sub'] = "IRCTCMAPPS";// the subject/principal is whom the token is about
+oPayload['nbf'] = tNow; // NotBeforeTimeInThePast
+oPayload['iat'] = tNow; // when the token was issued/created (now)
+oPayload['exp'] = tEnd; // time when the token will expire (1 hour from now)
+oPayload['jti'] = "id123456"+this.uid+tNow;// a unique identifier for the token
+oPayload['aud'] = "MAPPS";
+oPayload['ussd'] = this.getUssd(); // additional claims/attributes about the subject can be added
+// Sign JWT, password=616161
+const sHeader = JSON.stringify(oHeader);
+const sPayload = JSON.stringify(oPayload);
+const sJWT = jsrsasign.KJUR.jws.JWS.sign("HS384", sHeader, sPayload, "616161");
+     console.log(sJWT);
+        
+    retVal = sJWT;
+
+       /*  JsonWebSignature jws = new JsonWebSignature();
+        jws.setPayload(claims.toJson());
+jws.setKey(sessionStamp.getSessionKey().getPrivateKey());
+jws.setKeyIdHeaderValue(sessionStamp.getSessionKey().getKeyId());
+jws.setAlgorithmHeaderValue(AlgorithmIdentifiers.ECDSA_USING_P384_CURVE_AND_SHA384);
+        String innerJwt = jws.getCompactSerialization();
+        Log.i(TAG,"Signature:"+innerJwt);
+
+        JsonWebEncryption jwe = new JsonWebEncryption();
+jwe.setAlgorithmHeaderValue(KeyManagementAlgorithmIdentifiers.ECDH_ES_A128KW);
+jwe.setEncryptionMethodHeaderParameter(contentAlgoIdentifier);
+        jwe.setKey(sessionStamp.getSharedKey().getPublicKey());
+jwe.setKeyIdHeaderValue(sessionStamp.getSharedKey().getKeyId());
+        jwe.setContentTypeHeaderValue("JWT");
+        jwe.setPayload(innerJwt);
+        jwe.enableDefaultCompression();
+        String jwt = jwe.getCompactSerialization();
+        Log.i(TAG,"JWT:"+jwt);
+        Log.i(TAG,"JWT Length:"+jwt.length());
+        retVal = jwt;
+         */
+    }catch (e) {
+        console.log(e);
+        
+    }
+
+    return retVal;
+    }
+
+    
+    getUssd(): any {
+        throw new Error("Method not implemented.");
+    }
+    
 }
