@@ -13,6 +13,7 @@ import jsrsasign = require('jsrsasign');
 @Injectable()
 export class RestClientService {
 
+  keypair: any;
   baseUrlLocal = `./assets/data`;
   token: Token;
   csrfLockAvl: boolean;
@@ -321,10 +322,14 @@ oPayload['exp'] = tEnd; // time when the token will expire (1 hour from now)
 oPayload['jti'] = "id123456"+this.uid+tNow;// a unique identifier for the token
 oPayload['aud'] = "MAPPS";
 oPayload['ussd'] = this.getUssd(); // additional claims/attributes about the subject can be added
-// Sign JWT, password=616161
+// Sign JWT, 
+let password = 'secret-key' ;
+if( this.keypair && this.keypair['ecprvhex'] ) {
+    password = this.keypair['ecprvhex'];
+}
 const sHeader = JSON.stringify(oHeader);
 const sPayload = JSON.stringify(oPayload);
-const sJWT = jsrsasign.KJUR.jws.JWS.sign("HS384", sHeader, sPayload, "616161");
+const sJWT = jsrsasign.KJUR.jws.JWS.sign("HS384", sHeader, sPayload, password);
      console.log(sJWT);
         
     retVal = sJWT;

@@ -25,7 +25,8 @@ export class AuthenticationService {
         // agreeOnkey
         const ec = new jsrsasign.KJUR.crypto.ECDSA({'curve': 'secp384r1'});
         const keypair = ec.generateKeyPairHex();
-       /* const publicKeyInBase65 = `MIIBtTCCAU0GByqGSM49AgEwggFAAgEBMDwGByqGSM49AQECMQD
+        this.restClient.keypair = keypair;
+       /* const publicKeyInBase64 = `MIIBtTCCAU0GByqGSM49AgEwggFAAgEBMDwGByqGSM49AQECMQD
         //////////////////////////////////////////v////8AAAAAAAAAAP////8wZAQw//////////
         ////////////////////////////////7/////AAAAAAAAAAD////8BDCzMS+n4j7n5JiOBWvj+C0ZG
         B2cbv6BQRIDFAiPUBOHWsZWOY2KLtGdKoXI7dPsKu8EYQSqh8oivosFN46xxx7zIK10bh07Younm5hZ
@@ -33,10 +34,10 @@ export class AuthenticationService {
         foGdekMdfJDqDl8CMQD////////////////////////////////HY02B9Dct31gaDbJIsKd67OwZaszF
         KXMCAQEDYgAEmDSaDlg3vAm2sop7MSNvAFiucp98JpIXICAFywwvcuMKhhAosrm9q/nrTdu4uRbj0c+G
         nXOT6dww+KKXF9bH5Uccrzh0u4K+MgdpZDDEDMBWU0B6+Qoq/MTeCmtPPD1/`; */
-        const publicKeyInBase65 = btoa(keypair.ecpubhex);
+        const publicKeyInBase64 = this.hexToBase64(keypair.ecpubhex);
         // .replace(/\+/g, '-').replace(/\//g, '_').replace(/\=+$/, '');
         console.log(keypair);
-        this.restClient.agreeOnKey(publicKeyInBase65).subscribe((resp1) => {
+        this.restClient.agreeOnKey(publicKeyInBase64).subscribe((resp1) => {
           console.log(resp1);
           resolve(true);
         });
@@ -45,4 +46,9 @@ export class AuthenticationService {
     });
   }
 
+  hexToBase64(hexstring):string {
+    return btoa(hexstring.match(/\w{2}/g).map(function(a) {
+        return String.fromCharCode(parseInt(a, 16));
+    }).join(""));
+}
 }
